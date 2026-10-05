@@ -6,7 +6,9 @@ Every claim on the page is taken from the partner briefing deck and the customer
 change wording here, never in dist/.
 """
 import hashlib
+import json
 import re
+from datetime import date
 import sys
 from pathlib import Path
 
@@ -16,8 +18,8 @@ TEMPLATE = (ROOT / "src" / "template.html").read_text(encoding="utf-8")
 EN = {
     "lang": "en", "og_locale": "en_GB", "base": "", "home": "/", "canonical": "https://amethis.io/",
     "href_en": "/", "href_pl": "/pl/", "cur_en": "true", "cur_pl": "false",
-    "meta_title": "Amethis – people and AI agents running your organisation, under your control",
-    "meta_desc": "Describe how your organisation works and Amethis turns it into applications, data, processes and integrations – up to 30× faster – with AI agents doing the work and people approving what matters. Compliant by design, on-premises or in your own Azure, Google Cloud or AWS.",
+    "meta_title": "Amethis – governed AI agents for regulated organisations",
+    "meta_desc": "Amethis turns how your organisation works into apps, data and processes up to 30× faster – AI agents do the work, people stay in control. On-prem or your cloud.",
     "skip": "Skip to content", "lang_label": "Language",
     "nav_how": "How it works", "nav_control": "People & agents", "nav_path": "Getting started",
     "nav_trust": "Trust", "nav_partners": "Partners", "nav_cta": "Contact",
@@ -56,7 +58,7 @@ EN = {
     "one_h2": "Six kinds of systems you would otherwise buy and connect – in one.",
     "one_sub": "Today a change in how you work touches several separate tools, each with its own supplier, data and project. In Amethis they are one environment, so a change is made once and is consistent everywhere.",
     "instead": "instead of",
-    "o1_h": "Applications", "o1_p": "Screens, forms, dashboards and workspaces for every role.", "o1_s": "a separate app-building tool",
+    "o1_h": "User interfaces", "o1_p": "An integrated, modern UI environment: applications are built from screens (dashboards) made of tiles (widgets), which are assembled from elements – tables, forms, controls, charts, maps – by configuration alone, without programming.", "o1_s": "a separate app-building tool",
     "o2_h": "Processes and approvals", "o2_p": "Workflows, task queues, approvals and deputies – the work that today lives in e-mail and spreadsheets.", "o2_s": "a separate workflow system",
     "o3_h": "Integrations", "o3_p": "Connections with the systems you already have, in real time – even those that only have a screen.", "o3_s": "a separate integration platform",
     "o4_h": "Data and golden source", "o4_p": "One golden source across all your databases, with a semantic layer that describes your organisation – plus reports and analytics on live data.", "o4_s": "a separate data platform",
@@ -115,6 +117,13 @@ EN = {
     "cl_cta": "Start a conversation",
     "ft_eu": "Made in the European Union",
     "ft_privacy": "This site sets no cookies and loads nothing from third parties.",
+    "tq_p": "AI makes building cheap. Trusting what was built is the hard part. In Amethis, trust is part of the infrastructure: every result carries where its data came from, which rules produced it, who approved it and how to reverse it. That is why you can rely on what your people and agents produce – not only build it quickly.",
+    "tq_h": "Trust in the result – built in, not bolted on.",
+    "tq_k": "Two values, not one",
+    "tq_date": "August 2026",
+    "tq_cite": "Stephanie L. Woerner et al., “AI Value Creation: Five Provocative Propositions”,",
+    "tq_tr": "",
+    "og_alt": "Amethis: people and AI agents running an organisation under control – a live process with human approval, permissions, audit trail and compliance",
     "c2_card_a": "Agent proposes a re-plan ▸",
     "c2_card_p": "12 orders affected · 2 customers",
     "c2_card_h": "Truck TR-214 · 40 min late",
@@ -129,7 +138,7 @@ EN = {
     "c2_k": "Command and control",
     "nav_pricing": "Pricing",
     "fit_h": "Tailored down to a single workstation – and changed in hours",
-    "fit_p": "Every role – even every person – gets a workspace that fits exactly: their own screens, tasks and dashboards, which they can arrange themselves. When the way you work changes, the system follows in hours, not release cycles.",
+    "fit_p": "Every role – even every person – gets a workspace that fits exactly: their own screens, tasks and dashboards, which they can arrange themselves. Complex organisations are fully supported – hierarchies, delegations and deputies, many languages – with 40+ administration screens to run it all from the interface. When the way you work changes, the system follows in hours, not release cycles.",
     "pc_label": "Pricing",
     "pc_h2": "You pay for the work your processes actually do.",
     "pc_sub": "Two simple parts: a subscription for the platform, and usage measured in real business operations – not in servers, compute units, environments or the number of things you build.",
@@ -157,8 +166,8 @@ PL = dict(EN)
 PL.update({
     "lang": "pl", "og_locale": "pl_PL", "base": "../", "home": "/pl/", "canonical": "https://amethis.io/pl/",
     "cur_en": "false", "cur_pl": "true",
-    "meta_title": "Amethis – ludzie i agenci AI prowadzą Twoją organizację, pod Twoją kontrolą",
-    "meta_desc": "Opisz, jak działa Twoja organizacja, a Amethis zamieni to w aplikacje, dane, procesy i integracje – nawet 30× szybciej – z agentami AI wykonującymi pracę i ludźmi zatwierdzającymi to, co ważne. Zgodnie z regulacjami, na Twoich serwerach albo w Twoim Azure, Google Cloud lub AWS.",
+    "meta_title": "Amethis – agenci AI pod kontrolą dla organizacji regulowanych",
+    "meta_desc": "Amethis zamienia sposób działania organizacji w aplikacje, dane i procesy nawet 30× szybciej – agenci AI pracują, ludzie decydują. U Ciebie lub w chmurze.",
     "skip": "Przejdź do treści", "lang_label": "Język",
     "nav_how": "Jak to działa", "nav_control": "Ludzie i agenci", "nav_path": "Jak zacząć",
     "nav_trust": "Zaufanie", "nav_partners": "Partnerzy", "nav_cta": "Kontakt",
@@ -197,7 +206,7 @@ PL.update({
     "one_h2": "Sześć rodzajów systemów, które inaczej trzeba kupić i połączyć – w jednym.",
     "one_sub": "Dziś zmiana sposobu pracy dotyka kilku osobnych narzędzi, każde z własnym dostawcą, danymi i projektem. W Amethis to jedno środowisko, więc zmianę robi się raz i jest spójna wszędzie.",
     "instead": "zamiast",
-    "o1_h": "Aplikacje", "o1_p": "Ekrany, formularze, pulpity i przestrzenie pracy dla każdej roli.", "o1_s": "osobnego narzędzia do budowy aplikacji",
+    "o1_h": "Interfejsy użytkownika", "o1_p": "Zintegrowane, nowoczesne środowisko UI: aplikacje powstają z ekranów (pulpitów), na których są kafelki (widżety) złożone z elementów – tabel, formularzy, kontrolek, wykresów, map – wyłącznie konfiguracją, bez programowania.", "o1_s": "osobnego narzędzia do budowy aplikacji",
     "o2_h": "Procesy i akceptacje", "o2_p": "Obieg spraw, kolejki zadań, akceptacje i zastępstwa – praca, która dziś żyje w mailach i arkuszach.", "o2_s": "osobnego systemu obiegu spraw",
     "o3_h": "Integracje", "o3_p": "Połączenia z systemami, które już macie, na bieżąco – nawet z takimi, które mają tylko ekran.", "o3_s": "osobnej platformy integracyjnej",
     "o4_h": "Dane i złote źródło", "o4_p": "Jedno złote źródło danych (golden source) ze wszystkich Twoich baz, z warstwą semantyczną opisującą organizację – oraz raporty i analizy na aktualnych danych.", "o4_s": "osobnej platformy danych",
@@ -256,6 +265,13 @@ PL.update({
     "cl_cta": "Zacznijmy rozmowę",
     "ft_eu": "Wyprodukowano w Unii Europejskiej",
     "ft_privacy": "Ta strona nie ustawia ciasteczek i niczego nie pobiera od stron trzecich.",
+    "tq_p": "AI sprawia, że budowanie jest tanie. Trudne jest zaufanie do tego, co powstało. W Amethis zaufanie jest częścią infrastruktury: każdy wynik niesie informację, skąd pochodzą dane, jakie reguły go wytworzyły, kto go zatwierdził i jak go cofnąć. Dlatego możesz polegać na tym, co tworzą Twoi ludzie i agenci – a nie tylko szybko to zbudować.",
+    "tq_h": "Zaufanie do wyniku – wbudowane, a nie doklejone.",
+    "tq_k": "Dwie wartości, nie jedna",
+    "tq_date": "sierpień 2026",
+    "tq_cite": "Stephanie L. Woerner i in., „AI Value Creation: Five Provocative Propositions”,",
+    "tq_tr": "„To, co wygląda na tanie w budowie, staje się drogie w zaufaniu.”",
+    "og_alt": "Amethis: ludzie i agenci AI prowadzą organizację pod kontrolą – proces na żywo z akceptacją człowieka, uprawnieniami, śladem audytu i zgodnością",
     "c2_card_a": "Agent proponuje przeplanowanie ▸",
     "c2_card_p": "12 zamówień · 2 klientów",
     "c2_card_h": "Ciężarówka TR-214 · 40 min opóźnienia",
@@ -270,7 +286,7 @@ PL.update({
     "c2_k": "Command and control",
     "nav_pricing": "Opłaty",
     "fit_h": "Dopasowane aż do pojedynczego stanowiska – i zmieniane w godziny",
-    "fit_p": "Każda rola – a nawet każda osoba – dostaje przestrzeń pracy dopasowaną dokładnie do siebie: własne ekrany, zadania i pulpity, które może sama układać. Gdy zmienia się sposób pracy, system nadąża w ciągu godzin, a nie cykli wydawniczych.",
+    "fit_p": "Każda rola – a nawet każda osoba – dostaje przestrzeń pracy dopasowaną dokładnie do siebie: własne ekrany, zadania i pulpity, które może sama układać. Pełna obsługa organizacji o złożonej strukturze – hierarchie, delegacje i zastępstwa, wiele języków – i ponad 40 ekranów administracyjnych, z których zarządzasz wszystkim w interfejsie. Gdy zmienia się sposób pracy, system nadąża w ciągu godzin, a nie cykli wydawniczych.",
     "pc_label": "Model opłat",
     "pc_h2": "Płacisz za pracę, którą faktycznie wykonują Twoje procesy.",
     "pc_sub": "Dwa proste składniki: subskrypcja platformy i użycie mierzone w realnych operacjach biznesowych – a nie w serwerach, jednostkach mocy obliczeniowej, środowiskach czy liczbie rzeczy, które zbudujesz.",
@@ -318,6 +334,39 @@ def imprint(lang: str) -> str:
     return f"{text} · {COMPANY['address']}" if COMPANY["address"] else text
 
 
+def structured_data(content: dict) -> str:
+    """Schema.org graph (Organization, WebSite, SoftwareApplication) for search engines."""
+    graph = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {"@type": "Organization", "@id": "https://amethis.io/#org", "name": "Amethis", "url": "https://amethis.io/",
+             "logo": "https://amethis.io/assets/apple-touch-icon.png", "email": "info@amethis.io",
+             "legalName": f"{COMPANY['trade_name']} {COMPANY['owner']}", "vatID": COMPANY["vat_eu"], "areaServed": "EU"},
+            {"@type": "WebSite", "@id": "https://amethis.io/#website", "name": "Amethis", "url": "https://amethis.io/",
+             "inLanguage": ["en", "pl"], "publisher": {"@id": "https://amethis.io/#org"}},
+            {"@type": "SoftwareApplication", "name": "Amethis", "url": content["canonical"],
+             "applicationCategory": "BusinessApplication",
+             "operatingSystem": "On-premises, Microsoft Azure, Google Cloud, AWS",
+             "description": content["meta_desc"], "inLanguage": content["lang"],
+             "publisher": {"@id": "https://amethis.io/#org"}},
+        ],
+    }
+    return json.dumps(graph, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+
+
+def write_sitemap(dist: Path) -> None:
+    today = date.today().isoformat()
+    alt = ('<xhtml:link rel="alternate" hreflang="en" href="https://amethis.io/"/>'
+           '<xhtml:link rel="alternate" hreflang="pl" href="https://amethis.io/pl/"/>'
+           '<xhtml:link rel="alternate" hreflang="x-default" href="https://amethis.io/"/>')
+    urls = "".join(f"  <url><loc>{u}</loc><lastmod>{today}</lastmod>{alt}</url>\n"
+                   for u in ("https://amethis.io/", "https://amethis.io/pl/"))
+    (dist / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+        f"{urls}</urlset>\n", encoding="utf-8")
+
+
 def render(content: dict) -> str:
     missing = sorted(set(re.findall(r"\{\{(\w+)\}\}", TEMPLATE)) - content.keys())
     if missing:
@@ -332,6 +381,8 @@ def main() -> None:
     # Content hash in the stylesheet URL, so a browser never pairs new HTML with a cached old stylesheet.
     css_v = hashlib.sha256((dist / "assets" / "styles.css").read_bytes()).hexdigest()[:10]
     EN["css_v"] = PL["css_v"] = css_v
+    EN["jsonld"], PL["jsonld"] = structured_data(EN), structured_data(PL)
+    write_sitemap(dist)
     (dist / "index.html").write_text(render(EN), encoding="utf-8")
     (dist / "pl" / "index.html").write_text(render(PL), encoding="utf-8")
     print("built dist/index.html and dist/pl/index.html")
