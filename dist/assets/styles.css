@@ -377,3 +377,26 @@ footer .imprint { flex-basis: 100%; font-size: 0.78rem; color: var(--text-3); }
 @media (max-width: 880px) {
   .steps, .control { grid-template-columns: 1fr; }
 }
+
+/* how it works: two wide cards side by side */
+.wide-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.wide-pair .wide { margin-top: 0; align-items: start; }
+.wide-pair .wide:first-child { border-color: rgba(167, 139, 250, .3); background: radial-gradient(ellipse 60% 120% at 0% 50%, rgba(139, 92, 246, .14), transparent 70%), var(--surface-1); }
+
+/* pricing */
+.pricing { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 16px; margin-top: 40px; }
+.price-card { padding: 28px; border-radius: var(--radius-xl); border: 1px solid var(--border-subtle); background: rgba(21, 19, 28, .85); }
+.price-card.accent { border-color: rgba(167, 139, 250, .35); background: radial-gradient(ellipse 90% 80% at 0% 0%, rgba(139, 92, 246, .22), transparent 70%), var(--surface-1); }
+.price-card .k { font: 600 0.72rem/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--violet-300); }
+.price-card h3 { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin: 12px 0 10px; }
+.price-card p { color: var(--text-2); }
+.meter { list-style: none; display: grid; gap: 1px; margin-top: 6px; border-radius: 10px; overflow: hidden; background: var(--border-subtle); }
+.meter li { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr); gap: 14px; padding: 12px 14px; background: var(--surface-1); font-size: 0.93rem; }
+.meter b { color: var(--text-1); font-weight: 600; }
+.meter span { color: var(--text-2); }
+#pricing .benefits { border-top: 0; padding-top: 0; margin-top: 24px; }
+
+@media (max-width: 880px) {
+  .wide-pair, .pricing { grid-template-columns: 1fr; }
+  .meter li { grid-template-columns: 1fr; gap: 2px; }
+}
