@@ -37,11 +37,10 @@
       <span>Amethis</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#model">{{nav_model}}</a></li>
-      <li><a href="#platform">{{nav_platform}}</a></li>
-      <li><a href="#workspace">{{nav_workspace}}</a></li>
+      <li><a href="#how">{{nav_how}}</a></li>
+      <li><a href="#control">{{nav_control}}</a></li>
+      <li><a href="#path">{{nav_path}}</a></li>
       <li><a href="#trust">{{nav_trust}}</a></li>
-      <li><a href="#proof">{{nav_proof}}</a></li>
       <li><a href="#partners">{{nav_partners}}</a></li>
     </ul>
     <nav class="lang" aria-label="{{lang_label}}">
@@ -64,242 +63,200 @@
       <div class="cta-row">
         <a class="btn btn-primary" href="mailto:info@amethis.io?subject={{mail_subject}}">{{hero_cta1}}
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <a class="btn btn-ghost" href="#model">{{hero_cta2}}</a>
+        <a class="btn btn-ghost" href="#how">{{hero_cta2}}</a>
       </div>
-      <div class="trust-row">
-        <span class="chip">{{chip1}}</span><span class="chip">ABAC + ReBAC</span><span class="chip">{{chip3}}</span><span class="chip">GDPR · NIS2 · AI Act · DORA</span><span class="chip">{{chip5}}</span>
-      </div>
+      <ul class="benefits">
+        <li>{{ben1}}</li><li>{{ben2}}</li><li>{{ben3}}</li>
+      </ul>
     </div>
 
     <div class="scene" role="img" aria-label="{{scene_alt}}">
-      <svg class="world" viewBox="0 0 600 600" aria-hidden="true">
+      <svg class="world" viewBox="0 0 600 560" aria-hidden="true">
         <defs>
-          <radialGradient id="g-core" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#6d28d9"/></radialGradient>
-          <radialGradient id="g-glow"><stop offset="0" stop-color="#8b5cf6" stop-opacity=".55"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
-          <radialGradient id="g-field"><stop offset="0" stop-color="#8b5cf6" stop-opacity=".10"/><stop offset=".7" stop-color="#8b5cf6" stop-opacity=".03"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
-          <linearGradient id="g-hex" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c4b5fd"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
-          <filter id="f-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
-          <path id="arc-top" d="M30 300 A270 270 0 0 1 570 300"/>
-          <path id="arc-bottom" d="M140 300 A160 160 0 0 0 460 300"/>
-          <path id="arc-left" d="M95 470 A250 250 0 0 1 60 230"/>
-          <path id="arc-right" d="M540 230 A250 250 0 0 1 505 470"/>
-          <!-- flows: people and agents send into the core, the core serves applications -->
-          <path id="p-h1" d="M90 330 L228.7 310.2"/>
-          <path id="p-h2" d="M175 500 L261.8 361.1"/>
-          <path id="p-a1" d="M510 330 L371.3 310.2"/>
-          <path id="p-a2" d="M425 500 L338.2 361.1"/>
-          <path id="p-p1" d="M271.7 233.8 L205 78"/>
-          <path id="p-p2" d="M328.3 233.8 L395 78"/>
+          <linearGradient id="g-frame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8b5cf6" stop-opacity=".16"/><stop offset="1" stop-color="#8b5cf6" stop-opacity=".03"/></linearGradient>
+          <radialGradient id="g-token"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#ddd6fe"/><stop offset="1" stop-color="#a78bfa" stop-opacity="0"/></radialGradient>
+          <path id="lane" d="M80 330 H520"/>
         </defs>
 
-        <!-- controlled perimeter -->
-        <circle cx="300" cy="300" r="285" fill="url(#g-field)"/>
-        <circle cx="300" cy="300" r="282" fill="none" stroke="#3a3550" stroke-width="1" stroke-dasharray="2 6"/>
-        <g class="ring-rot-rev"><circle cx="300" cy="300" r="160" fill="none" stroke="#2c2550" stroke-width="1" stroke-dasharray="1 10"/></g>
+        <!-- 1 · requirement in business language -->
+        <rect x="60" y="14" width="480" height="96" rx="14" fill="#15131c" stroke="#3a3550"/>
+        <g transform="translate(82 30)" fill="none" stroke="#c4b5fd" stroke-width="1.4" stroke-linecap="round"><path d="M2 1h8l4 4v10H2Z"/><path d="M5 9h6M5 12h4"/></g>
+        <text class="g-cap" x="104" y="42">{{g_req_cap}}</text>
+        <text class="g-req" x="82" y="70">{{g_req1}}</text>
+        <text class="g-req" x="82" y="92">{{g_req2}}<tspan class="caret" fill="#a78bfa">▍</tspan></text>
 
-        <!-- zone labels -->
-        <text class="zone-t" fill="#a78bfa"><textPath href="#arc-top" startOffset="50%" text-anchor="middle">{{zone_apps}}</textPath></text>
-        <text class="zone-t" fill="#c9c9d1"><textPath href="#arc-left" startOffset="50%" text-anchor="middle">{{zone_people}}</textPath></text>
-        <text class="zone-t" fill="#6ee7b7"><textPath href="#arc-right" startOffset="50%" text-anchor="middle">{{zone_agents}}</textPath></text>
+        <path d="M300 110 V140" stroke="#a78bfa" stroke-width="1.6" class="flow" fill="none"/>
+        <path d="M294 133 300 140 306 133" stroke="#a78bfa" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
-        <!-- direct agent → application path: refused -->
-        <path d="M498 312 Q 520 180 410 92" fill="none" stroke="#fda4af" stroke-opacity=".45" stroke-width="1.2" stroke-dasharray="3 5"/>
-        <g transform="translate(497 196)">
-          <circle r="10" fill="#3b1a22" stroke="#fda4af" stroke-opacity=".6"/>
-          <path d="M-3.5 -3.5 3.5 3.5M3.5 -3.5 -3.5 3.5" stroke="#fda4af" stroke-width="1.6" stroke-linecap="round"/>
-        </g>
-        <text x="514" y="178" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#fda4af" fill-opacity=".85">{{denied}}</text>
+        <!-- 2 · the governed system Amethis builds and runs -->
+        <rect x="20" y="146" width="560" height="284" rx="22" fill="url(#g-frame)" stroke="#6a5da8" stroke-width="1.2" stroke-dasharray="10 6"/>
+        <text class="g-cap" x="44" y="174">{{g_build_cap}}</text>
 
-        <!-- flows -->
-        <g fill="none" stroke-width="1.4">
-          <use href="#p-h1" class="flow" stroke="#b8b8bf" stroke-opacity=".55"/>
-          <use href="#p-h2" class="flow" stroke="#b8b8bf" stroke-opacity=".55"/>
-          <use href="#p-a1" class="flow" stroke="#34d399" stroke-opacity=".6"/>
-          <use href="#p-a2" class="flow" stroke="#34d399" stroke-opacity=".6"/>
-          <use href="#p-p1" class="flow" stroke="#a78bfa" stroke-opacity=".7"/>
-          <use href="#p-p2" class="flow" stroke="#a78bfa" stroke-opacity=".7"/>
+        <g class="tile"><rect x="40" y="190" width="124" height="50" rx="10" fill="#1c1926" stroke="#2a2538"/>
+          <g transform="translate(54 205)" fill="none" stroke="#c4b5fd" stroke-width="1.5" stroke-linejoin="round"><rect x="0" y="1" width="20" height="17" rx="3"/><path d="M0 6h20M5 11h6"/></g>
+          <text class="g-tile" x="82" y="220">{{g_t1}}</text></g>
+        <g class="tile"><rect x="172" y="190" width="124" height="50" rx="10" fill="#1c1926" stroke="#2a2538"/>
+          <g transform="translate(186 205)" fill="none" stroke="#c4b5fd" stroke-width="1.5"><ellipse cx="10" cy="4" rx="9" ry="3"/><path d="M1 4v11c0 1.7 4 3 9 3s9-1.3 9-3V4M1 9.5c0 1.7 4 3 9 3s9-1.3 9-3"/></g>
+          <text class="g-tile" x="214" y="220">{{g_t2}}</text></g>
+        <g class="tile"><rect x="304" y="190" width="124" height="50" rx="10" fill="#1c1926" stroke="#2a2538"/>
+          <g transform="translate(318 205)" fill="none" stroke="#c4b5fd" stroke-width="1.5" stroke-linecap="round"><path d="M6 1v5M14 1v5M3 6h14v4a7 7 0 0 1-14 0Z"/><path d="M10 17v3"/></g>
+          <text class="g-tile" x="346" y="220">{{g_t3}}</text></g>
+        <g class="tile"><rect x="436" y="190" width="124" height="50" rx="10" fill="#1c1926" stroke="#2a2538"/>
+          <g transform="translate(450 205)" fill="none" stroke="#c4b5fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h14M3 10h9M3 16h5"/><path d="m12 15 2.5 2.5L19 13"/></g>
+          <text class="g-tile" x="478" y="220">{{g_t4}}</text></g>
+
+        <text class="g-sub" x="44" y="276" letter-spacing="1.2">{{g_live}}</text>
+        <path d="M80 330 H520" stroke="#3a3550" stroke-width="2" fill="none"/>
+        <path d="M80 330 H520" stroke="#a78bfa" stroke-opacity=".6" stroke-width="2" class="flow" fill="none"/>
+
+        <!-- process steps -->
+        <g>
+          <circle cx="80" cy="330" r="24" fill="#15131c" stroke="#a78bfa" stroke-opacity=".8"/>
+          <g transform="translate(70 320)" fill="none" stroke="#c4b5fd" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"><path d="M1 11 4 2h12l3 9v7H1Z"/><path d="M1 11h5l1 3h6l1-3h5"/></g>
+          <text class="g-step" x="80" y="374" text-anchor="middle">{{g_s1}}</text>
+          <text class="g-sub" x="80" y="390" text-anchor="middle">{{g_s1s}}</text>
         </g>
         <g>
-          <circle r="3" fill="#f0f0f2"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#p-h1"/></animateMotion></circle>
-          <circle r="3" fill="#f0f0f2"><animateMotion dur="3.6s" begin="-1.2s" repeatCount="indefinite"><mpath href="#p-h2"/></animateMotion></circle>
-          <circle r="3" fill="#6ee7b7"><animateMotion dur="2.8s" begin="-.4s" repeatCount="indefinite"><mpath href="#p-a1"/></animateMotion></circle>
-          <circle r="3" fill="#6ee7b7"><animateMotion dur="3.4s" begin="-1.8s" repeatCount="indefinite"><mpath href="#p-a2"/></animateMotion></circle>
-          <circle r="3" fill="#c4b5fd"><animateMotion dur="3s" begin="-.8s" repeatCount="indefinite"><mpath href="#p-p1"/></animateMotion></circle>
-          <circle r="3" fill="#c4b5fd"><animateMotion dur="3.3s" begin="-2.2s" repeatCount="indefinite"><mpath href="#p-p2"/></animateMotion></circle>
+          <rect x="207" y="310" width="40" height="40" rx="11" fill="#15131c" stroke="#34d399" stroke-opacity=".8" transform="rotate(45 227 330)"/>
+          <g transform="translate(217 320)" fill="none" stroke="#6ee7b7" stroke-width="1.5" stroke-linejoin="round"><path d="M10 0c.9 5 3.3 7.6 9.5 9.5C13.3 11.4 10.9 14 10 19c-.9-5-3.3-7.6-9.5-9.5C6.7 7.6 9.1 5 10 0Z"/></g>
+          <text class="g-step" x="227" y="374" text-anchor="middle">{{g_s2}}</text>
+          <text class="g-sub" x="227" y="390" text-anchor="middle">{{g_s2s}}</text>
+        </g>
+        <g>
+          <circle class="hil-ring" cx="373" cy="330" r="24" fill="none" stroke="#e9b96a"/>
+          <circle cx="373" cy="330" r="24" fill="#15131c" stroke="#e9b96a"/>
+          <g transform="translate(362 318)" fill="none" stroke="#f3d7a5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="6" r="4.5"/><path d="M1 22c1.2-4.6 4.2-7 8-7 1.8 0 3.4.5 4.7 1.6"/><path d="m14 20 2.5 2.5L22 17"/></g>
+          <text class="g-step" x="373" y="374" text-anchor="middle">{{g_s3}}</text>
+          <text class="g-sub" x="373" y="390" text-anchor="middle">{{g_s3s}}</text>
+          <g opacity="0">
+            <rect x="313" y="278" width="120" height="22" rx="11" fill="#3a2c17" stroke="#e9b96a" stroke-opacity=".6"/>
+            <text x="373" y="293" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600" fill="#e9b96a">{{g_wait}}</text>
+            <animate attributeName="opacity" dur="7s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.38;.42;.70;.74;1"/>
+          </g>
+        </g>
+        <g>
+          <rect x="500" y="310" width="40" height="40" rx="11" fill="#15131c" stroke="#34d399" stroke-opacity=".8" transform="rotate(45 520 330)"/>
+          <g transform="translate(510 320)" fill="none" stroke="#6ee7b7" stroke-width="1.5" stroke-linejoin="round"><path d="M10 0c.9 5 3.3 7.6 9.5 9.5C13.3 11.4 10.9 14 10 19c-.9-5-3.3-7.6-9.5-9.5C6.7 7.6 9.1 5 10 0Z"/></g>
+          <text class="g-step" x="520" y="374" text-anchor="middle">{{g_s4}}</text>
+          <text class="g-sub" x="520" y="390" text-anchor="middle">{{g_s4s}}</text>
+          <g opacity="0">
+            <circle cx="542" cy="306" r="10" fill="#173b30" stroke="#34d399"/>
+            <path d="m537 306 3.5 3.5 6.5-7" stroke="#6ee7b7" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <animate attributeName="opacity" dur="7s" repeatCount="indefinite" values="0;0;1;1;0" keyTimes="0;.96;.97;.995;1"/>
+          </g>
+        </g>
+        <circle r="10" fill="url(#g-token)">
+          <animateMotion dur="7s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0.667;0.667;1" keyTimes="0;0.4;0.72;1"><mpath href="#lane"/></animateMotion>
+        </circle>
+
+        <!-- governance on the frame -->
+        <g>
+          <rect x="140" y="419" width="104" height="22" rx="11" fill="#1c1926" stroke="#6a5da8"/>
+          <text class="g-pill" x="192" y="434" text-anchor="middle">{{g_p1}}</text>
+          <rect x="250" y="419" width="100" height="22" rx="11" fill="#1c1926" stroke="#6a5da8"/>
+          <text class="g-pill" x="300" y="434" text-anchor="middle">{{g_p2}}</text>
+          <rect x="356" y="419" width="104" height="22" rx="11" fill="#1c1926" stroke="#6a5da8"/>
+          <text class="g-pill" x="408" y="434" text-anchor="middle">{{g_p3}}</text>
         </g>
 
-        <!-- policy ring with gates where every flow crosses it -->
-        <g class="ring-rot"><circle cx="300" cy="300" r="110" fill="none" stroke="#6a5da8" stroke-width="1.2" stroke-dasharray="14 6 2 6"/></g>
-        <g fill="#15131c" stroke="#a78bfa" stroke-width="1.2">
-          <circle cx="256.7" cy="198.9" r="7"/><circle cx="343.3" cy="198.9" r="7"/>
-          <circle cx="191.1" cy="315.6" r="7"/><circle cx="241.7" cy="393.3" r="7"/>
-          <circle cx="408.9" cy="315.6" r="7"/><circle cx="358.3" cy="393.3" r="7"/>
-        </g>
-        <g fill="none" stroke="#6ee7b7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M253.7 199 l2 2 3.5-4"/><path d="M340.3 199 l2 2 3.5-4"/>
-          <path d="M188.1 315.7 l2 2 3.5-4"/><path d="M238.7 393.4 l2 2 3.5-4"/>
-          <path d="M405.9 315.7 l2 2 3.5-4"/><path d="M355.3 393.4 l2 2 3.5-4"/>
-        </g>
-        <text font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.6" fill="#87878f"><textPath href="#arc-bottom" startOffset="50%" text-anchor="middle">{{ring_label}}</textPath></text>
-
-        <!-- core -->
-        <circle class="core-glow" cx="300" cy="300" r="95" fill="url(#g-glow)"/>
-        <path d="M300 226 364.1 263v74L300 374l-64.1-37v-74Z" fill="url(#g-core)" stroke="url(#g-hex)" stroke-width="1.5"/>
-        <path d="M300 240 352 270v60l-52 30-52-30v-60Z" fill="none" stroke="#ddd6fe" stroke-opacity=".25"/>
-        <text class="core-t" x="300" y="296" text-anchor="middle">AMETHIS</text>
-        <text class="core-s" x="300" y="313" text-anchor="middle">{{core_sub1}}</text>
-        <text class="core-s" x="300" y="326" text-anchor="middle">{{core_sub2}}</text>
-
-        <!-- nodes: applications -->
-        <g>
-          <rect x="178" y="51" width="54" height="54" rx="14" fill="#15131c" stroke="#a78bfa" stroke-opacity=".7"/>
-          <g transform="translate(193 66)" fill="none" stroke="#c4b5fd" stroke-width="1.6" stroke-linejoin="round"><rect x="0" y="1" width="24" height="20" rx="3"/><path d="M0 7h24M5 12h6M5 16h10"/><circle cx="18" cy="14" r="3"/></g>
-          <text class="node-label" x="205" y="124" text-anchor="middle">{{n_app1}}</text>
-          <text class="node-sub" x="205" y="138" text-anchor="middle">{{n_app1_s}}</text>
-        </g>
-        <g>
-          <rect x="368" y="51" width="54" height="54" rx="14" fill="#15131c" stroke="#a78bfa" stroke-opacity=".7"/>
-          <g transform="translate(383 66)" fill="none" stroke="#c4b5fd" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><rect x="0" y="1" width="24" height="20" rx="3"/><path d="M4 16l5-5 4 3 6-7"/></g>
-          <text class="node-label" x="395" y="124" text-anchor="middle">{{n_app2}}</text>
-          <text class="node-sub" x="395" y="138" text-anchor="middle">{{n_app2_s}}</text>
-        </g>
-        <!-- nodes: people -->
-        <g>
-          <rect x="63" y="303" width="54" height="54" rx="27" fill="#15131c" stroke="#b8b8bf" stroke-opacity=".6"/>
-          <g transform="translate(78 317)" fill="none" stroke="#f0f0f2" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="5"/><path d="M2 24c1.5-5.5 5.5-8 10-8s8.5 2.5 10 8"/></g>
-          <text class="node-label" x="90" y="377" text-anchor="middle">{{n_h1}}</text>
-          <text class="node-sub" x="90" y="391" text-anchor="middle">{{n_h1_s}}</text>
-        </g>
-        <g>
-          <rect x="148" y="473" width="54" height="54" rx="27" fill="#15131c" stroke="#b8b8bf" stroke-opacity=".6"/>
-          <g transform="translate(163 487)" fill="none" stroke="#f0f0f2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="8" r="5"/><path d="M1 24c1.3-5 4.8-8 9-8 2 0 3.8.6 5.2 1.8"/><path d="M15 21l3 3 6-6"/></g>
-          <text class="node-label" x="175" y="547" text-anchor="middle">{{n_h2}}</text>
-          <text class="node-sub" x="175" y="561" text-anchor="middle">{{n_h2_s}}</text>
-        </g>
-        <!-- nodes: agents -->
-        <g>
-          <rect x="483" y="303" width="54" height="54" rx="14" fill="#15131c" stroke="#34d399" stroke-opacity=".7" transform="rotate(45 510 330)"/>
-          <g transform="translate(498 318)" fill="none" stroke="#6ee7b7" stroke-width="1.6" stroke-linejoin="round"><path d="M12 1c1 6 4 9 11 11-7 2-10 5-11 11-1-6-4-9-11-11 7-2 10-5 11-11Z"/></g>
-          <text class="node-label" x="510" y="388" text-anchor="middle">{{n_a1}}</text>
-          <text class="node-sub" x="510" y="402" text-anchor="middle">{{n_a1_s}}</text>
-        </g>
-        <g>
-          <rect x="398" y="473" width="54" height="54" rx="14" fill="#15131c" stroke="#34d399" stroke-opacity=".7" transform="rotate(45 425 500)"/>
-          <g transform="translate(413 488)" fill="none" stroke="#6ee7b7" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M9 2c.7 4 2.6 6 7 7-4.4 1-6.3 3-7 7-.7-4-2.6-6-7-7 4.4-1 6.3-3 7-7Z"/><path d="M19 14c.4 2.2 1.4 3.3 4 4-2.6.7-3.6 1.8-4 4-.4-2.2-1.4-3.3-4-4 2.6-.7 3.6-1.8 4-4Z"/></g>
-          <text class="node-label" x="425" y="558" text-anchor="middle">{{n_a2}}</text>
-          <text class="node-sub" x="425" y="572" text-anchor="middle">{{n_a2_s}}</text>
-        </g>
+        <!-- 3 · existing systems and the digital twin -->
+        <path d="M70 460 V430" stroke="#34d399" stroke-opacity=".6" stroke-width="1.4" class="flow rev" fill="none"/>
+        <path d="M530 460 V430" stroke="#a78bfa" stroke-opacity=".6" stroke-width="1.4" class="flow" fill="none"/>
+        <rect x="20" y="460" width="270" height="86" rx="14" fill="#15131c" stroke="#2f6f54"/>
+        <g transform="translate(38 478)" fill="none" stroke="#6ee7b7" stroke-width="1.5" stroke-linejoin="round"><rect x="0" y="0" width="22" height="16" rx="2"/><path d="M7 20h8M11 16v4"/></g>
+        <text class="g-card-h" x="72" y="492">{{g_legacy_h}}</text>
+        <text class="g-sub" x="38" y="518">{{g_legacy_p1}}</text>
+        <text class="g-sub" x="38" y="532">{{g_legacy_p2}}</text>
+        <rect x="310" y="460" width="270" height="86" rx="14" fill="#15131c" stroke="#4a4566"/>
+        <g transform="translate(328 476)" fill="none" stroke="#c4b5fd" stroke-width="1.5" stroke-linejoin="round"><rect x="0" y="4" width="15" height="15" rx="3"/><rect x="7" y="0" width="15" height="15" rx="3" stroke-dasharray="3 2"/></g>
+        <text class="g-card-h" x="362" y="492">{{g_twin_h}}</text>
+        <text class="g-sub" x="328" y="518">{{g_twin_p1}}</text>
+        <text class="g-sub" x="328" y="532">{{g_twin_p2}}</text>
       </svg>
-
-      <div class="toast t1" aria-hidden="true"><span class="ic lock">◆</span><span>{{toast1}}</span></div>
-      <div class="toast t2" aria-hidden="true"><span class="ic wait">⏸</span><span>{{toast2}}</span></div>
-      <div class="toast t3" aria-hidden="true"><span class="ic ok">✓</span><span>{{toast3}}</span></div>
     </div>
   </div>
 </section>
 
-<!-- ============ STATS ============ -->
-<div class="band">
-  <div class="wrap">
-    <div class="stats reveal">
-      <div class="stat"><div class="v">{{s1_v}}</div><div class="l">{{s1_l}}</div></div>
-      <div class="stat"><div class="v">{{s2_v}}</div><div class="l">{{s2_l}}</div></div>
-      <div class="stat"><div class="v">0</div><div class="l">{{s3_l}}</div></div>
-      <div class="stat"><div class="v">63</div><div class="l">{{s4_l}}</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ============ EXECUTABLE OPERATING MODEL ============ -->
-<section class="block" id="model">
+<!-- ============ HOW IT WORKS ============ -->
+<section class="block" id="how">
   <div class="wrap">
     <div class="label">{{how_label}}</div>
     <h2 class="reveal">{{how_h2}}</h2>
     <p class="sub reveal">{{how_sub}}</p>
-    <div class="pipeline reveal">
-      <div class="pipe-col">
-        <div class="file"><span>{{k_domain}}</span><em>data-product.avsc</em></div>
-        <div class="file"><span>{{k_process}}</span><em>process.bpmn</em></div>
-        <div class="file"><span>{{k_policy}}</span><em>policy.abac</em></div>
-        <div class="file"><span>{{k_iface}}</span><em>app.bundle.json</em></div>
-        <div class="file e"><span>{{k_oblig}}</span><em>obligations.ropa</em></div>
-      </div>
-      <svg class="arrow" viewBox="0 0 34 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 8h30M25 2l6 6-6 6"/></svg>
-      <div class="engine">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28.5 9.25v13.5L16 30 3.5 22.75V9.25Z" fill="url(#lg-b)" stroke="#7c3aed" stroke-width=".5"/></svg>
-        <h3>{{how_engine_h}}</h3>
-        <p>{{how_engine_p}}</p>
-        <div class="mini"><span class="chip">data fabric</span><span class="chip">{{how_c2}}</span><span class="chip">UI shell</span><span class="chip">M2M</span><span class="chip">{{how_c5}}</span></div>
-      </div>
-      <svg class="arrow" viewBox="0 0 34 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 8h30M25 2l6 6-6 6"/></svg>
-      <div class="pipe-col">
-        <div class="out">{{how_o1}}<small>{{how_o1_s}}</small></div>
-        <div class="out">{{how_o2}}<small>{{how_o2_s}}</small></div>
-        <div class="out">{{how_o3}}<small>GraphQL · REST · MCP</small></div>
-        <div class="out">{{how_o4}}<small>{{how_o4_s}}</small></div>
-      </div>
+    <div class="steps">
+      <div class="step reveal"><h3>{{st1_h}}</h3><p>{{st1_p}}</p></div>
+      <div class="step reveal"><h3>{{st2_h}}</h3><p>{{st2_p}}</p></div>
+      <div class="step reveal"><h3>{{st3_h}}</h3><p>{{st3_p}}</p></div>
     </div>
-    <div class="grid-3">
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7Z"/></svg></div><h3>{{f1_h}}</h3><p>{{f1_p}}</p></div>
-      <div class="card reveal"><div class="ico em"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></div><h3>{{f2_h}}</h3><p>{{f2_p}}</p></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M17 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 20v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div><h3>{{f3_h}}</h3><p>{{f3_p}}</p></div>
+    <div class="wide reveal">
+      <div class="ico em"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="13" height="13" rx="2.5"/><rect x="9" y="3" width="13" height="13" rx="2.5" stroke-dasharray="3 2"/></svg></div>
+      <div><h3>{{twin_h}}</h3><p>{{twin_p}}</p></div>
+    </div>
+    <p class="note reveal">{{how_note}}</p>
+  </div>
+</section>
+
+<!-- ============ ONE SYSTEM INSTEAD OF SIX ============ -->
+<section class="block" id="one">
+  <div class="wrap">
+    <div class="label">{{one_label}}</div>
+    <h2 class="reveal">{{one_h2}}</h2>
+    <p class="sub reveal">{{one_sub}}</p>
+    <div class="six reveal">
+      <div><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 13h5"/></svg></div><h3>{{o1_h}}</h3><p>{{o1_p}}</p><span class="instead">{{instead}} <s>{{o1_s}}</s></span></div>
+      <div><div class="ico"><svg viewBox="0 0 24 24"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.5 6h9M6.5 8l4 8M17.5 8l-4 8"/></svg></div><h3>{{o2_h}}</h3><p>{{o2_p}}</p><span class="instead">{{instead}} <s>{{o2_s}}</s></span></div>
+      <div><div class="ico"><svg viewBox="0 0 24 24"><path d="M8 3v5M16 3v5M5 8h14v4a7 7 0 0 1-14 0Z"/><path d="M12 19v3"/></svg></div><h3>{{o3_h}}</h3><p>{{o3_p}}</p><span class="instead">{{instead}} <s>{{o3_s}}</s></span></div>
+      <div><div class="ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div><h3>{{o4_h}}</h3><p>{{o4_p}}</p><span class="instead">{{instead}} <s>{{o4_s}}</s></span></div>
+      <div><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>{{o5_h}}</h3><p>{{o5_p}}</p><span class="instead">{{instead}} <s>{{o5_s}}</s></span></div>
+      <div><div class="ico em"><svg viewBox="0 0 24 24"><path d="M12 2c1 6.5 4 9 10 10-6 1-9 3.5-10 10-1-6.5-4-9-10-10 6-1 9-3.5 10-10Z"/></svg></div><h3>{{o6_h}}</h3><p>{{o6_p}}</p><span class="instead">{{instead}} <s>{{o6_s}}</s></span></div>
     </div>
   </div>
 </section>
 
-<!-- ============ MISSING LAYER ============ -->
-<section class="block" id="platform">
+<!-- ============ PEOPLE DECIDE, AGENTS DO THE WORK ============ -->
+<section class="block" id="control">
   <div class="wrap">
-    <div class="label">{{ml_label}}</div>
-    <h2 class="reveal">{{ml_h2}}</h2>
-    <p class="sub reveal">{{ml_sub}}</p>
-    <div class="layers reveal">
-      <div class="layer"><span class="k">{{ml_l_k}}</span><h3>{{ml_l_h}}</h3><p>{{ml_l_p}}</p></div>
-      <div class="layer mid"><span class="k">Amethis · Executable Operating Model</span><h3>{{ml_m_h}}</h3><p>{{ml_m_p}}</p></div>
-      <div class="layer"><span class="k">{{ml_r_k}}</span><h3>{{ml_r_h}}</h3><p>{{ml_r_p}}</p></div>
+    <div class="label">{{ct_label}}</div>
+    <h2 class="reveal">{{ct_h2}}</h2>
+    <p class="sub reveal">{{ct_sub}}</p>
+    <div class="control">
+      <div class="approve reveal" aria-label="{{ap_alt}}">
+        <div class="approve-top">
+          <span class="ico em"><svg viewBox="0 0 24 24"><path d="M12 2c1 6.5 4 9 10 10-6 1-9 3.5-10 10-1-6.5-4-9-10-10 6-1 9-3.5 10-10Z"/></svg></span>
+          <span>{{ap_from}}</span><time>09:42</time>
+        </div>
+        <div class="approve-body">
+          <h3>{{ap_title}} <span class="amt">{{ap_amount}}</span></h3>
+          <ul>
+            <li><span class="y">✓</span>{{ap_c1}}</li>
+            <li><span class="y">✓</span>{{ap_c2}}</li>
+            <li><span class="w">!</span>{{ap_c3}}</li>
+          </ul>
+        </div>
+        <div class="approve-actions"><span class="btn btn-primary">{{ap_ok}}</span><span class="btn btn-ghost">{{ap_no}}</span></div>
+        <div class="approve-foot">{{ap_foot}}</div>
+      </div>
+      <ul class="points reveal">
+        <li><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.4-4.6 4.4-7 8-7s6.6 2.4 8 7"/></svg></div><div><h3>{{pt1_h}}</h3><p>{{pt1_p}}</p></div></li>
+        <li><div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><div><h3>{{pt2_h}}</h3><p>{{pt2_p}}</p></div></li>
+        <li><div class="ico"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div><div><h3>{{pt3_h}}</h3><p>{{pt3_p}}</p></div></li>
+        <li><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5M12 16h.01"/></svg></div><div><h3>{{pt4_h}}</h3><p>{{pt4_p}}</p></div></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ============ GOVERNED WORKSPACE ============ -->
-<section class="block" id="workspace">
+<!-- ============ EVOLUTIONARY PATH ============ -->
+<section class="block" id="path">
   <div class="wrap">
-    <div class="label">{{ws_label}}</div>
-    <h2 class="reveal">{{ws_h2}}</h2>
-    <p class="sub reveal">{{ws_sub}}</p>
-    <div class="workspace">
-      <div class="actors reveal">
-        <div class="actor">
-          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.4-4.6 4.4-7 8-7s6.6 2.4 8 7"/></svg></div>
-          <div><h3>{{ws_p_h}}</h3><p>{{ws_p_p}}</p></div>
-        </div>
-        <div class="actor">
-          <div class="ico em"><svg viewBox="0 0 24 24"><path d="M12 2c1 6.5 4 9 10 10-6 1-9 3.5-10 10-1-6.5-4-9-10-10 6-1 9-3.5 10-10Z"/></svg></div>
-          <div><h3>{{ws_a_h}}</h3><p>{{ws_a_p}}</p></div>
-        </div>
-        <div class="actor">
-          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
-          <div><h3>{{ws_s_h}}</h3><p>{{ws_s_p}}</p></div>
-        </div>
-        <div class="actor">
-          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></div>
-          <div><h3>{{ws_g_h}}</h3><p>{{ws_g_p}}</p></div>
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="console">
-          <div class="console-bar"><i></i><i></i><i></i><span>{{log_title}}</span><span class="live">live</span></div>
-          <ol class="log" id="log">
-            <li><span class="t">10:42:07</span><span><span class="who">agent · rag-assistant</span> <span class="msg">{{log1}}</span><br><span class="pill p-ok">ABAC allow</span><span class="pill p-v">{{log1_p}}</span></span></li>
-            <li class="hl"><span class="t">10:42:09</span><span><span class="who">agent · dq-check</span> <span class="msg">{{log2}}</span><br><span class="pill p-wait">{{log2_p}}</span></span></li>
-            <li><span class="t">10:42:31</span><span><span class="who">{{log3_who}}</span> <span class="msg">{{log3}}</span><br><span class="pill p-ok">{{log3_p}}</span></span></li>
-            <li><span class="t">10:42:31</span><span><span class="who">app · situational-picture</span> <span class="msg">{{log4}}</span><br><span class="pill p-v">CDC</span><span class="pill p-ok">{{log4_p}}</span></span></li>
-            <li><span class="t">10:42:40</span><span><span class="who">agent · export-bot</span> <span class="msg">{{log5}}</span><br><span class="pill p-deny">{{log5_p}}</span></span></li>
-            <li class="ok"><span class="t">10:42:40</span><span><span class="who">audit</span> <span class="msg">{{log6}}</span><br><span class="pill p-v">provenance</span></span></li>
-          </ol>
-        </div>
-        <p style="font-size:.8rem;color:var(--text-3);margin-top:10px">{{log_note}}</p>
-      </div>
+    <div class="label">{{pa_label}}</div>
+    <h2 class="reveal">{{pa_h2}}</h2>
+    <p class="sub reveal">{{pa_sub}}</p>
+    <div class="path reveal">
+      <div><span class="dot">1</span><h3>{{ph1_h}}</h3><p>{{ph1_p}}</p></div>
+      <div><span class="dot">2</span><h3>{{ph2_h}}</h3><p>{{ph2_p}}</p></div>
+      <div><span class="dot">3</span><h3>{{ph3_h}}</h3><p>{{ph3_p}}</p></div>
+      <div><span class="dot">4</span><h3>{{ph4_h}}</h3><p>{{ph4_p}}</p></div>
     </div>
   </div>
 </section>
@@ -312,13 +269,9 @@
     <p class="sub reveal">{{tr_sub}}</p>
     <div class="grid-4">
       <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="7" rx="1.5"/><rect x="3" y="14" width="18" height="7" rx="1.5"/><path d="M7 6.5h.01M7 17.5h.01"/></svg></div><h3>{{t1_h}}</h3><p>{{t1_p}}</p></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>{{t2_h}}</h3><p>{{t2_p}}</p></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div><h3>{{t3_h}}</h3><p>{{t3_p}}</p></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><h3>{{t4_h}}</h3><p>{{t4_p}}</p></div>
-      <div class="card reveal"><div class="ico em"><svg viewBox="0 0 24 24"><path d="M12 2c1 6.5 4 9 10 10-6 1-9 3.5-10 10-1-6.5-4-9-10-10 6-1 9-3.5 10-10Z"/></svg></div><h3>{{t5_h}}</h3><p>{{t5_p}}</p></div>
-      <div class="card reveal"><div class="ico em"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div><h3>{{t6_h}}</h3><p>{{t6_p}}</p></div>
-      <div class="card reveal"><div class="ico em"><svg viewBox="0 0 24 24"><path d="M3 7h18v13H3zM8 7V4h8v3"/><path d="M12 11v5M9.5 13.5h5"/></svg></div><h3>{{t7_h}}</h3><p>{{t7_p}}</p></div>
-      <div class="card reveal"><div class="ico em"><svg viewBox="0 0 24 24"><path d="M12 22V12M12 12c0-4 3-7 8-8-1 5-4 8-8 8ZM12 15c0-3-2.5-5.5-7-6 .5 4 3 6 7 6Z"/></svg></div><h3>{{t8_h}}</h3><p>{{t8_p}}</p></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div><h3>{{t2_h}}</h3><p>{{t2_p}}</p></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><h3>{{t3_h}}</h3><p>{{t3_p}}</p></div>
+      <div class="card reveal"><div class="ico em"><svg viewBox="0 0 24 24"><path d="M12 22V12M12 12c0-4 3-7 8-8-1 5-4 8-8 8ZM12 15c0-3-2.5-5.5-7-6 .5 4 3 6 7 6Z"/></svg></div><h3>{{t4_h}}</h3><p>{{t4_p}}</p></div>
     </div>
   </div>
 </section>
@@ -331,17 +284,20 @@
     <div class="case reveal">
       <div class="case-top">
         <div><h3>{{pr_h3}}</h3><p>{{pr_p}}</p></div>
-        <ul class="checks">
-          <li>{{pr_c1}}</li><li>{{pr_c2}}</li><li>{{pr_c3}}</li><li>{{pr_c4}}</li>
-        </ul>
+        <ul class="checks"><li>{{pr_c1}}</li><li>{{pr_c2}}</li><li>{{pr_c3}}</li></ul>
       </div>
       <div class="case-nums">
         <div><div class="v">2</div><div class="l">{{pr_n1}}</div></div>
         <div><div class="v">3</div><div class="l">{{pr_n2}}</div></div>
         <div><div class="v">15</div><div class="l">{{pr_n3}}</div></div>
-        <div><div class="v">27</div><div class="l">{{pr_n4}}</div></div>
+        <div><div class="v">7</div><div class="l">{{pr_n4}}</div></div>
         <div><div class="v">0</div><div class="l">{{pr_n5}}</div></div>
       </div>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7Z"/></svg></div><h3>{{f1_h}}</h3><p>{{f1_p}}</p></div>
+      <div class="card reveal"><div class="ico em"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></div><h3>{{f2_h}}</h3><p>{{f2_p}}</p></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 20h18M6 16V9M11 16V5M16 16v-4M21 16V8"/></svg></div><h3>{{f3_h}}</h3><p>{{f3_p}}</p></div>
     </div>
   </div>
 </section>
@@ -349,23 +305,14 @@
 <!-- ============ PARTNERS ============ -->
 <section class="block" id="partners">
   <div class="wrap">
-    <div class="label">{{pa_label}}</div>
-    <h2 class="reveal">{{pa_h2}}</h2>
-    <p class="sub reveal">{{pa_sub}}</p>
-    <div class="partner">
-      <div class="quote reveal">
-        <span>“{{pa_quote}}”</span>
-        <small>{{pa_quote_s}}</small>
+    <div class="label">{{pn_label}}</div>
+    <div class="band-partner reveal">
+      <div>
+        <h2>{{pn_h2}}</h2>
+        <p class="sub">{{pn_sub}}</p>
+        <div class="cta-row"><a class="btn btn-ghost" href="mailto:info@amethis.io?subject={{mail_subject_partner}}">{{pn_cta}}</a></div>
       </div>
-      <div class="card reveal">
-        <ul class="checks">
-          <li><b>{{pa_c1_b}}</b> {{pa_c1}}</li>
-          <li><b>{{pa_c2_b}}</b> {{pa_c2}}</li>
-          <li><b>{{pa_c3_b}}</b> {{pa_c3}}</li>
-          <li><b>{{pa_c4_b}}</b> {{pa_c4}}</li>
-        </ul>
-        <div class="cta-row" style="margin-top:22px"><a class="btn btn-ghost" href="mailto:info@amethis.io?subject={{mail_subject_partner}}">{{pa_cta}}</a></div>
-      </div>
+      <ul class="checks"><li>{{pn_c1}}</li><li>{{pn_c2}}</li><li>{{pn_c3}}</li></ul>
     </div>
   </div>
 </section>
@@ -399,19 +346,11 @@
 <script>
 (function () {
   var els = document.querySelectorAll('.reveal');
-  var log = document.getElementById('log');
-  if (!('IntersectionObserver' in window)) {
-    els.forEach(function (e) { e.classList.add('in'); });
-    if (log) log.classList.add('in');
-    return;
-  }
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
   var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
-    });
+    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
   els.forEach(function (e) { io.observe(e); });
-  if (log) io.observe(log);
 })();
 </script>
 </body>
