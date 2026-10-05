@@ -5,6 +5,7 @@ Usage: python3 src/build.py   (writes dist/index.html and dist/pl/index.html)
 Every claim on the page is taken from the partner briefing deck and the customer brief;
 change wording here, never in dist/.
 """
+import hashlib
 import re
 import sys
 from pathlib import Path
@@ -255,6 +256,9 @@ def main() -> None:
     dist = ROOT / "dist"
     (dist / "pl").mkdir(parents=True, exist_ok=True)
     EN["imprint"], PL["imprint"] = imprint("en"), imprint("pl")
+    # Content hash in the stylesheet URL, so a browser never pairs new HTML with a cached old stylesheet.
+    css_v = hashlib.sha256((dist / "assets" / "styles.css").read_bytes()).hexdigest()[:10]
+    EN["css_v"] = PL["css_v"] = css_v
     (dist / "index.html").write_text(render(EN), encoding="utf-8")
     (dist / "pl" / "index.html").write_text(render(PL), encoding="utf-8")
     print("built dist/index.html and dist/pl/index.html")
