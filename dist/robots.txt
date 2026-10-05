@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amethis.io/sitemap.xml
