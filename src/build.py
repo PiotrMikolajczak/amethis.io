@@ -230,27 +230,26 @@ PL.update({
 })
 
 
-# Registry details the Polish Commercial Companies Code (art. 206 KSH) requires on a company website.
-# Fill in every value; the footer prints whatever is set and the build warns about what is missing.
+# Business identification shown in the footer. Amethis is currently a brand of a sole proprietorship;
+# values below come from the Ministry of Finance VAT register (wl-api.mf.gov.pl, NIP 5212106852).
+# "address" is optional by design: the register lists only a residence address, published only on request.
 COMPANY = {
-    "name": "Amethis Sp. z o.o.",
-    "address": "",          # e.g. "ul. Przykładowa 1, 00-001 Warszawa"
-    "court": "",            # e.g. "Sąd Rejonowy dla m.st. Warszawy w Warszawie, XII Wydział Gospodarczy KRS"
-    "krs": "",
-    "nip": "",
-    "capital": "",          # e.g. "5 000,00 zł"
+    "owner": "Piotr Mikołajczak",
+    "nip": "5212106852",
+    "vat_eu": "PL5212106852",
+    "regon": "012640530",
+    "address": "",
 }
 
-IMPRINT_LABELS = {
-    "en": {"address": "Registered office", "court": "Registry court", "krs": "KRS", "nip": "NIP (VAT ID)", "capital": "Share capital"},
-    "pl": {"address": "Siedziba", "court": "Sąd rejestrowy", "krs": "KRS", "nip": "NIP", "capital": "Kapitał zakładowy"},
+IMPRINT = {
+    "en": "Amethis is operated by {owner} · NIP {nip} (EU VAT {vat_eu}) · REGON {regon}",
+    "pl": "Markę Amethis prowadzi {owner} · NIP {nip} (VAT UE {vat_eu}) · REGON {regon}",
 }
 
 
 def imprint(lang: str) -> str:
-    labels = IMPRINT_LABELS[lang]
-    parts = [COMPANY["name"]] + [f"{labels[k]}: {COMPANY[k]}" for k in labels if COMPANY[k]]
-    return " · ".join(parts)
+    text = IMPRINT[lang].format(**COMPANY)
+    return f"{text} · {COMPANY['address']}" if COMPANY["address"] else text
 
 
 def render(content: dict) -> str:
@@ -263,9 +262,6 @@ def render(content: dict) -> str:
 def main() -> None:
     dist = ROOT / "dist"
     (dist / "pl").mkdir(parents=True, exist_ok=True)
-    missing = [k for k in IMPRINT_LABELS["pl"] if not COMPANY[k]]
-    if missing:
-        print(f"WARNING: company registry details missing (art. 206 KSH): {', '.join(missing)}")
     EN["imprint"], PL["imprint"] = imprint("en"), imprint("pl")
     (dist / "index.html").write_text(render(EN), encoding="utf-8")
     (dist / "pl" / "index.html").write_text(render(PL), encoding="utf-8")
