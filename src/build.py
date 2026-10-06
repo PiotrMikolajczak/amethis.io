@@ -54,7 +54,7 @@ EN = {
     "st3_h": "People and agents work together", "st3_p": "Everyone works in one shared environment: agents prepare and carry out the work, people decide where it matters, and everything stays in sync in real time.",
     "twin_h": "Rehearse before you change",
     "twin_p": "Replay real history against a new rule or step, see the effect, compare variants – then approve, or roll back at any time.",
-    "how_note": "The result is one consistent environment for your people, agents and applications – working within the rules and approvals you defined.",
+    "how_note": "Why it is both fast and trustworthy: you configure only the business logic – every other mechanism, from permissions and audit to integrations and scaling, comes with the platform. That configuration is versioned and validated before it runs, and there is no code to write or maintain. <b>You build faster – and every change can be checked.</b>",
 
     "one_label": "One platform instead of six",
     "one_h2": "Six kinds of systems you would otherwise buy and connect – in one.",
@@ -252,7 +252,7 @@ PL.update({
     "st3_h": "Ludzie i agenci pracują razem", "st3_p": "Wszyscy pracują w jednym wspólnym środowisku: agenci przygotowują i wykonują pracę, ludzie decydują tam, gdzie to ważne, a całość jest zsynchronizowana na bieżąco.",
     "twin_h": "Przećwicz, zanim zmienisz",
     "twin_p": "Odtwórz prawdziwą historię na nowej regule albo kroku, zobacz skutek, porównaj warianty – potem zatwierdź albo w każdej chwili cofnij.",
-    "how_note": "Efektem jest jedno spójne środowisko dla ludzi, agentów i aplikacji – działające w granicach reguł i akceptacji, które określiliście.",
+    "how_note": "Dlaczego to jest jednocześnie szybkie i godne zaufania: konfigurujesz wyłącznie logikę biznesową – wszystkie pozostałe mechanizmy, od uprawnień i audytu po integracje i skalowanie, dostarcza platforma. Ta konfiguracja jest wersjonowana i sprawdzana, zanim zacznie działać, a kodu nie trzeba pisać ani utrzymywać. <b>Budujesz szybciej – i możesz sprawdzić każdą zmianę.</b>",
 
     "one_label": "Jedna platforma zamiast sześciu",
     "one_h2": "Sześć rodzajów systemów, które inaczej trzeba kupić i połączyć – w jednym.",

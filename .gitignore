@@ -7,3 +7,5 @@ tools/
 .DS_Store
 # Operator-only audits and analyses
 audits/
+# Draft proof materials (recording script, build log, method note) until approved for publication
+materials/
