@@ -2,6 +2,7 @@
 dist/**/index.html
 # Operator-only material: deployment notes with private addresses, packaged upload, local tooling
 INSTRUKCJA.md
+KONTYNUACJA.md
 *.zip
 tools/
 .DS_Store
