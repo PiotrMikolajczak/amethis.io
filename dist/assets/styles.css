@@ -443,3 +443,28 @@ footer .imprint { flex-basis: 100%; font-size: 0.78rem; color: var(--text-3); }
 .gov-hl h3 { font-size: 1.3rem; font-weight: 600; letter-spacing: -0.015em; margin: 10px 0 10px; }
 .gov-hl p { color: var(--text-2); max-width: 60em; }
 @media (max-width: 520px) { .gov-hl { grid-template-columns: 1fr; } }
+
+/* ---------- multi-page site (2026-10 structure) ---------- */
+.hero .tagline { margin: -6px 0 18px; font: 600 1.05rem/1.3 var(--font-mono); letter-spacing: .02em; color: var(--violet-200); }
+.proofline { margin-top: 18px; font-size: 0.9rem; }
+.proofline a { color: var(--emerald-300); text-decoration: none; border-bottom: 1px dashed rgba(110, 231, 183, .45); }
+.proofline a:hover { color: #fff; }
+.sub.status { color: var(--emerald-300); font-size: 1rem; }
+.wide-single { margin-top: 16px; }
+.wide-single .wide { margin-top: 0; }
+.approve-top .ap-tag { font: 600 0.66rem/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--amber-300);
+  background: var(--amber-bg); padding: 4px 7px; border-radius: 5px; margin-left: 4px; }
+a.more { display: inline-block; margin-top: 26px; color: var(--violet-300); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+a.more:hover { color: #fff; }
+.path.path-3 { grid-template-columns: repeat(3, 1fr); }
+.page-head { padding: clamp(56px, 8vw, 96px) 0 0; }
+.page-head h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); margin: 6px 0 18px; }
+main > section.block:first-child { padding-top: clamp(56px, 8vw, 96px); }
+section.block h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 700; max-width: 22em; text-wrap: balance; }
+.band-partner h1 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); }
+footer .foot-links { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 0.85rem; }
+.closing .cl-alt { margin-top: 10px; font-size: 0.9rem; }
+.closing .cl-alt a { color: var(--text-2); text-decoration: none; }
+.closing .cl-alt a:hover { color: var(--text-1); }
+@media (max-width: 880px) { .path.path-3 { grid-template-columns: 1fr; } }
+.hero h1 { font-size: clamp(2rem, 3.4vw, 2.75rem); line-height: 1.1; }

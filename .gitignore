@@ -1,8 +1,9 @@
 # Rendered by src/build.py (locally and in the Pages workflow)
-dist/index.html
-dist/pl/index.html
+dist/**/index.html
 # Operator-only material: deployment notes with private addresses, packaged upload, local tooling
 INSTRUKCJA.md
 *.zip
 tools/
 .DS_Store
+# Operator-only audits and analyses
+audits/
