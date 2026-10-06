@@ -119,6 +119,7 @@ EN = {
     "cl_cta": "Show us one process",
     "ft_eu": "Made in the European Union",
     "ft_privacy": "This site sets no cookies and loads nothing from third parties.",
+    "nav_home": "Home",
     "oa_sub": "For public administration, emergency services and critical infrastructure: events, alerts and moving objects on one live map – with the same rules, approvals and audit trail as everything else in Amethis.",
     "oa_h2": "A live operational picture – linked to the decisions behind it.",
     "oa_label": "Solutions · operational awareness",
@@ -316,6 +317,7 @@ PL.update({
     "cl_cta": "Pokaż nam jeden proces",
     "ft_eu": "Wyprodukowano w Unii Europejskiej",
     "ft_privacy": "Ta strona nie ustawia ciasteczek i niczego nie pobiera od stron trzecich.",
+    "nav_home": "Start",
     "oa_sub": "Dla administracji publicznej, służb i infrastruktury krytycznej: zdarzenia, alerty i obiekty w ruchu na jednej mapie na żywo – według tych samych reguł, akceptacji i śladu audytu co wszystko inne w Amethis.",
     "oa_h2": "Bieżący obraz operacyjny – powiązany z decyzjami, które za nim stoją.",
     "oa_label": "Zastosowania · obraz operacyjny",
@@ -458,8 +460,8 @@ PAGE_EN = _pages("/", {
     "six_more": "Operational awareness: a live operational picture →",
     "platform_title": "Platform – your operating model, running | Amethis",
     "platform_desc": "How Amethis runs your operating model: applications built from screens and widgets, one trusted set of data, integrations and workspaces for every role.",
-    "platform_label": "Platform", "platform_h1": "Your operating model, running.",
-    "platform_lede": "Amethis is a governed operations platform: the way your organisation works – its processes, data, rules, screens and obligations – is not documented next to the system; it is the running system. For analysts: it brings business orchestration and automation, application building, data integration, governance and AI-agent execution into one customer-controlled environment.",
+    "platform_label": "Platform · Executable Operating Model", "platform_h1": "Your operating model, running.",
+    "platform_lede": "We call it an Executable Operating Model: the way your organisation works – its processes, data, rules, screens and obligations – is defined by configuration and runs as the system itself, instead of being documented next to it. Change the model and the organisation's system changes with it. For analysts: Amethis is a governed operations platform that brings business orchestration and automation, application building, data integration, governance and AI-agent execution into one customer-controlled environment.",
     "proof_title": "Proof – a public-sector system in two weeks | Amethis",
     "proof_desc": "A mission-critical EU public-sector system rebuilt from 300 pages of requirements in two weeks, with zero lines of custom code – and how the speed was measured.",
     "trust_title": "Trust and sovereignty | Amethis",
@@ -481,8 +483,8 @@ PAGE_PL = _pages("/pl/", {
     "six_more": "Obraz operacyjny: bieżący obraz sytuacji na mapie →",
     "platform_title": "Platforma – Twój model operacyjny, uruchomiony | Amethis",
     "platform_desc": "Jak Amethis uruchamia model operacyjny: aplikacje z ekranów i widżetów, jeden wiarygodny zbiór danych, integracje i przestrzenie pracy dla każdej roli.",
-    "platform_label": "Platforma", "platform_h1": "Twój model operacyjny – uruchomiony.",
-    "platform_lede": "Amethis to platforma operacyjna pod kontrolą: sposób działania Twojej organizacji – procesy, dane, reguły, ekrany i obowiązki – nie jest opisany obok systemu, tylko jest działającym systemem. Dla analityków: łączy orkiestrację i automatyzację procesów biznesowych, budowę aplikacji, integrację danych, zarządzanie danymi i działanie agentów AI w jednym środowisku kontrolowanym przez klienta.",
+    "platform_label": "Platforma · Executable Operating Model", "platform_h1": "Twój model operacyjny – uruchomiony.",
+    "platform_lede": "Nazywamy to Executable Operating Model – wykonywalnym modelem operacyjnym: sposób działania Twojej organizacji – procesy, dane, reguły, ekrany i obowiązki – jest zdefiniowany konfiguracją i działa jako sam system, zamiast być opisanym obok niego. Zmieniasz model – zmienia się system organizacji. Dla analityków: Amethis to platforma operacyjna pod kontrolą, która łączy orkiestrację i automatyzację procesów biznesowych, budowę aplikacji, integrację danych, zarządzanie danymi i działanie agentów AI w jednym środowisku kontrolowanym przez klienta.",
     "proof_title": "Dowód – system sektora publicznego w dwa tygodnie | Amethis",
     "proof_desc": "Krytyczny system sektora publicznego UE odtworzony z 300 stron wymagań w dwa tygodnie, bez linii kodu na zamówienie – i jak zmierzyliśmy szybkość.",
     "trust_title": "Zaufanie i suwerenność | Amethis",
@@ -550,6 +552,8 @@ def write_sitemap(dist: Path) -> None:
 
 def page_html(blocks: list, promote_h1: bool) -> str:
     body = "\n".join((BLOCKS / f"{b}.html").read_text(encoding="utf-8") for b in blocks)
+    # {{> name}} pulls a shared block into another one (e.g. the operational map card).
+    body = re.sub(r"\{\{> ([\w-]+)\}\}", lambda m: (BLOCKS / f"{m.group(1)}.html").read_text(encoding="utf-8"), body)
     if promote_h1:
         # A sub-page without a page head opens with its first section heading as the single h1.
         body = re.sub(r"<h2([^>]*)>(.*?)</h2>", r"<h1\1>\2</h1>", body, count=1, flags=re.S)

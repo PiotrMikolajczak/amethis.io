@@ -1,0 +1,61 @@
+    <div class="c2 reveal">
+      <div class="c2-text">
+        <span class="k">{{c2_k}}</span>
+        <h3>{{c2_h}}</h3>
+        <p>{{c2_p}}</p>
+        <ul class="c2-legend">
+          <li><i class="ev"></i>{{c2_l1}}</li><li><i class="tr"></i>{{c2_l2}}</li><li><i class="ai"></i>{{c2_l3}}</li><li><i class="sh"></i>{{c2_l4}}</li><li><i class="dr"></i>{{c2_l5}}</li>
+        </ul>
+      </div>
+      <div class="c2-map" role="img" aria-label="{{c2_alt}}">
+        <svg viewBox="0 0 560 340" aria-hidden="true">
+          <style>
+            .c2t { font: 600 10.5px Inter, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #f0f0f2; }
+            .c2s { font: 500 9.5px 'JetBrains Mono', ui-monospace, Menlo, monospace; fill: #b8b8bf; }
+            .c2a { font: 600 9.5px 'JetBrains Mono', ui-monospace, Menlo, monospace; fill: #c4b5fd; }
+          </style>
+          <defs>
+            <pattern id="c2grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#a78bfa" stroke-opacity=".07"/></pattern>
+            <path id="c2-plane" d="M40 70 C 160 30, 300 40, 520 110"/>
+            <path id="c2-ship" d="M380 300 C 430 280, 470 250, 520 240"/>
+            <path id="c2-truck" d="M60 250 L150 222 L250 214 L300 170"/>
+          </defs>
+          <rect width="560" height="340" fill="#0f0e15"/>
+          <path d="M330 340 C 350 300, 360 270, 420 250 C 470 232, 500 200, 560 190 V340Z" fill="#11203a" fill-opacity=".85"/>
+          <path d="M330 340 C 350 300, 360 270, 420 250 C 470 232, 500 200, 560 190" fill="none" stroke="#34597a" stroke-width="1.2"/>
+          <rect width="560" height="340" fill="url(#c2grid)"/>
+          <path d="M60 250 L150 222 L250 214 L300 170 L360 140 L470 128" fill="none" stroke="#3a3550" stroke-width="5" stroke-linecap="round"/>
+          <path d="M150 222 L170 300" fill="none" stroke="#3a3550" stroke-width="4" stroke-linecap="round"/>
+          <use href="#c2-plane" fill="none" stroke="#c4b5fd" stroke-opacity=".35" stroke-dasharray="3 5"/>
+
+          <!-- events -->
+          <g><circle cx="250" cy="214" r="16" fill="#fda4af" fill-opacity=".12"><animate attributeName="r" values="8;20;8" dur="2.4s" repeatCount="indefinite"/></circle><circle cx="250" cy="214" r="5" fill="#fda4af"/></g>
+          <g><circle cx="455" cy="232" r="14" fill="#e9b96a" fill-opacity=".14"><animate attributeName="r" values="7;17;7" dur="2.8s" repeatCount="indefinite"/></circle><circle cx="455" cy="232" r="4.5" fill="#e9b96a"/></g>
+          <g><circle cx="230" cy="296" r="4.5" fill="#e9b96a"/></g>
+
+          <!-- truck (selected) -->
+          <g>
+            <circle r="13" fill="#173b30" stroke="#34d399"><animateMotion dur="14s" repeatCount="indefinite" keyPoints="0;0.62;0.62;1" keyTimes="0;0.5;0.8;1" calcMode="linear"><mpath href="#c2-truck"/></animateMotion></circle>
+            <g fill="none" stroke="#6ee7b7" stroke-width="1.4" stroke-linejoin="round"><animateMotion dur="14s" repeatCount="indefinite" keyPoints="0;0.62;0.62;1" keyTimes="0;0.5;0.8;1" calcMode="linear"><mpath href="#c2-truck"/></animateMotion><path d="M-7 -4h8v7h-8Z M1 -2h4l2 2.5V3H1Z"/><circle cx="-4" cy="4.5" r="1.4"/><circle cx="4" cy="4.5" r="1.4"/></g>
+          </g>
+          <!-- aircraft -->
+          <g fill="#c4b5fd"><animateMotion dur="16s" repeatCount="indefinite" rotate="auto"><mpath href="#c2-plane"/></animateMotion><path d="M9 0 L-5 -3 L-8 -9 L-10 -9 L-8 -2 L-12 -1 L-13 -4 L-15 -4 L-14 0 L-15 4 L-13 4 L-12 1 L-8 2 L-10 9 L-8 9 L-5 3 Z"/></g>
+          <!-- ship -->
+          <g><animateMotion dur="22s" repeatCount="indefinite" rotate="auto"><mpath href="#c2-ship"/></animateMotion><path d="M-10 -4 H6 L11 0 L6 4 H-10 Z" fill="#7dd3fc" fill-opacity=".9"/><path d="M-6 -4 v-4 h6 v4" fill="none" stroke="#7dd3fc" stroke-width="1.2"/></g>
+          <!-- drone -->
+          <g transform="translate(395 92)"><animateTransform attributeName="transform" type="translate" values="395 92; 410 86; 402 100; 395 92" dur="6s" repeatCount="indefinite"/>
+            <circle r="10" fill="none" stroke="#f0abfc" stroke-opacity=".35" stroke-dasharray="2 3"/>
+            <g stroke="#f0abfc" stroke-width="1.4" fill="none"><path d="M-5 -5 5 5M5 -5 -5 5"/><circle cx="-6" cy="-6" r="2.5"/><circle cx="6" cy="-6" r="2.5"/><circle cx="-6" cy="6" r="2.5"/><circle cx="6" cy="6" r="2.5"/></g>
+          </g>
+
+          <!-- object card -->
+          <g transform="translate(24 132)">
+            <rect width="200" height="64" rx="10" fill="#15131c" fill-opacity=".95" stroke="#2f6f54"/>
+            <text class="c2t" x="12" y="20">{{c2_card_h}}</text>
+            <text class="c2s" x="12" y="37">{{c2_card_p}}</text>
+            <text class="c2a" x="12" y="54">{{c2_card_a}}</text>
+          </g>
+          <rect x="1" y="1" width="558" height="338" rx="13" fill="none" stroke="#3a3550"/>
+        </svg>
+      </div>
+    </div>
