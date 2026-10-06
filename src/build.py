@@ -115,10 +115,19 @@ EN = {
 
     "cl_label": "European digital sovereignty",
     "cl_h2": "A data- and process-driven organisation – with people augmented by AI agents.",
-    "cl_sub": "Tell us about one process you would like to change. In a 45-minute working session we map it with you and show how it looks in Amethis – with your people in control. You leave with a concrete pilot outline.",
+    "cl_sub": "Tell us about one process you would like to change. In a 45-minute working conversation we walk through it with you and show how a similar process runs in Amethis. You leave with a concrete pilot outline – the full model of your process is built in the pilot itself.",
     "cl_cta": "Show us one process",
     "ft_eu": "Made in the European Union",
     "ft_privacy": "This site sets no cookies and loads nothing from third parties.",
+    "lg_ip_p": "Amethis is a brand of its operator. The texts and graphics on this website may not be reproduced without permission. Fonts: Inter and JetBrains Mono, under the SIL Open Font License.",
+    "lg_ip_h": "Trademarks and content",
+    "lg_priv_p": "This website sets no cookies, uses no analytics and loads nothing from third parties. It is hosted on GitHub Pages; to deliver the pages, the host processes technical data such as IP addresses. If you write to us, we use your e-mail only to reply.",
+    "lg_priv_h": "Privacy",
+    "lg_contact_h": "Contact",
+    "lg_op_h": "Operator",
+    "lg_h2": "Who runs this website.",
+    "lg_label": "Legal information",
+    "ft_legal": "Legal information",
     "nav_home": "Home",
     "oa_sub": "For public administration, emergency services and critical infrastructure: events, alerts and moving objects on one live map – with the same rules, approvals and audit trail as everything else in Amethis.",
     "oa_h2": "A live operational picture – linked to the decisions behind it.",
@@ -313,10 +322,19 @@ PL.update({
 
     "cl_label": "Europejska suwerenność cyfrowa",
     "cl_h2": "Organizacja oparta na danych i procesach – z ludźmi wspieranymi przez agentów AI.",
-    "cl_sub": "Opowiedz nam o jednym procesie, który chcesz zmienić. W 45-minutowej sesji roboczej rozpisujemy go razem i pokazujemy, jak wygląda w Amethis – z Twoimi ludźmi przy sterach. Wychodzisz z konkretnym zarysem pilota.",
+    "cl_sub": "Opowiedz nam o jednym procesie, który chcesz zmienić. W 45-minutowej rozmowie roboczej omawiamy go razem i pokazujemy, jak podobny proces działa w Amethis. Wychodzisz z konkretnym zarysem pilota – a pełny model Twojego procesu powstaje już w pilocie.",
     "cl_cta": "Pokaż nam jeden proces",
     "ft_eu": "Wyprodukowano w Unii Europejskiej",
     "ft_privacy": "Ta strona nie ustawia ciasteczek i niczego nie pobiera od stron trzecich.",
+    "lg_ip_p": "Amethis jest marką operatora serwisu. Teksty i grafiki z tej strony nie mogą być powielane bez zgody. Fonty: Inter i JetBrains Mono, na licencji SIL Open Font License.",
+    "lg_ip_h": "Znaki i treści",
+    "lg_priv_p": "Ta strona nie ustawia ciasteczek, nie używa analityki i niczego nie pobiera od stron trzecich. Jest hostowana w GitHub Pages; aby dostarczyć strony, dostawca hostingu przetwarza dane techniczne, takie jak adresy IP. Jeśli do nas napiszesz, Twój adres e-mail wykorzystamy wyłącznie do odpowiedzi.",
+    "lg_priv_h": "Prywatność",
+    "lg_contact_h": "Kontakt",
+    "lg_op_h": "Operator",
+    "lg_h2": "Kto prowadzi ten serwis.",
+    "lg_label": "Informacje prawne",
+    "ft_legal": "Informacje prawne",
     "nav_home": "Start",
     "oa_sub": "Dla administracji publicznej, służb i infrastruktury krytycznej: zdarzenia, alerty i obiekty w ruchu na jednej mapie na żywo – według tych samych reguł, akceptacji i śladu audytu co wszystko inne w Amethis.",
     "oa_h2": "Bieżący obraz operacyjny – powiązany z decyzjami, które za nim stoją.",
@@ -426,8 +444,8 @@ COMPANY = {
 }
 
 IMPRINT = {
-    "en": "{trade_name}, {owner} · EU VAT {vat_eu}",
-    "pl": "{trade_name}, {owner} · VAT UE {vat_eu}",
+    "en": "The Amethis brand and this website are operated by {owner} ({trade_name}), NIP {nip}, EU VAT {vat_eu}, REGON {regon}.",
+    "pl": "Właścicielem marki Amethis i operatorem tego serwisu jest {owner} ({trade_name}), NIP {nip}, VAT UE {vat_eu}, REGON {regon}.",
 }
 
 
@@ -451,6 +469,7 @@ def _pages(lp: str, t: dict) -> dict:
         "opaw": {"meta_title": t["opaw_title"], "meta_desc": t["opaw_desc"]},
         "pricing": {"meta_title": t["pricing_title"], "meta_desc": t["pricing_desc"]},
         "partners": {"meta_title": t["partners_title"], "meta_desc": t["partners_desc"]},
+        "legal": {"meta_title": t["legal_title"], "meta_desc": t["legal_desc"]},
     }
 
 
@@ -475,6 +494,8 @@ PAGE_EN = _pages("/", {
     "pricing_desc": "A platform subscription plus usage measured in real business operations – not in servers, compute units, environments or the number of things you build.",
     "partners_title": "Partners – software houses and integrators | Amethis",
     "partners_desc": "For software houses and integrators: deliver larger programmes with a smaller team on Amethis, and keep the delivery, support and recurring revenue.",
+    "legal_title": "Legal information | Amethis",
+    "legal_desc": "Who operates amethis.io, how to contact us, and how this website handles privacy – no cookies and nothing loaded from third parties.",
 })
 
 PAGE_PL = _pages("/pl/", {
@@ -498,6 +519,8 @@ PAGE_PL = _pages("/pl/", {
     "pricing_desc": "Subskrypcja platformy i użycie mierzone w realnych operacjach biznesowych – nie w serwerach, jednostkach mocy, środowiskach ani liczbie rzeczy, które budujesz.",
     "partners_title": "Partnerzy – software house'y i integratorzy | Amethis",
     "partners_desc": "Dla software house'ów i integratorów: większe programy mniejszym zespołem na Amethis, a wdrożenie, utrzymanie i przychód powtarzalny zostają po Twojej stronie.",
+    "legal_title": "Informacje prawne | Amethis",
+    "legal_desc": "Kto prowadzi serwis amethis.io, jak się z nami skontaktować i jak strona traktuje prywatność – bez ciasteczek i bez treści od stron trzecich.",
 })
 
 
@@ -511,6 +534,7 @@ PAGES = {
     "opaw": ("solutions/operational-awareness/", ["opaw", "closing"], True),
     "pricing": ("pricing/", ["pricing", "closing"], True),
     "partners": ("partners/", ["partners"], True),
+    "legal": ("legal/", ["legal"], True),
 }
 
 
@@ -575,7 +599,7 @@ def main() -> None:
         prefix = "/" if lang == "en" else "/pl/"
         for page, (slug, blocks, promote) in PAGES.items():
             content = {**base, **pages[page]}
-            content.update(lp=prefix, css_v=css_v, imprint=imprint(lang),
+            content.update(lp=prefix, css_v=css_v, imprint=imprint(lang), lg_op_p=imprint(lang),
                            canonical=f"{SITE}{prefix}{slug}", url_en=f"{SITE}/{slug}", url_pl=f"{SITE}/pl/{slug}",
                            href_en=f"/{slug}", href_pl=f"/pl/{slug}")
             content["jsonld"] = structured_data(content, page)

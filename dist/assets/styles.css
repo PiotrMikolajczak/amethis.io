@@ -477,3 +477,6 @@ footer .foot-links { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px 
   .nav .nav-links a { white-space: nowrap; }
   section.block { scroll-margin-top: 110px; }
 }
+.legal { max-width: 46em; margin-top: 28px; }
+.legal h3 { font-size: 1.02rem; font-weight: 600; margin: 26px 0 8px; }
+.legal p { color: var(--text-2); }

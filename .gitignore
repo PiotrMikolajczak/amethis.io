@@ -9,3 +9,4 @@ tools/
 audits/
 # Draft proof materials (recording script, build log, method note) until approved for publication
 materials/
+__pycache__/
