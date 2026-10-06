@@ -499,3 +499,6 @@ footer .foot-links { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px 
 @media (max-width: 520px) { .contact-form .f-row { grid-template-columns: 1fr; } }
 .contact-form .f-status.err { color: var(--amber-300); }
 .contact-form input.bad, .contact-form input:user-invalid { border-color: #fda4af; box-shadow: 0 0 0 3px rgba(253, 164, 175, .15); }
+/* hero: more air between the CTA buttons and the benefit bullets */
+.hero .benefits { margin-top: 64px; padding-top: 26px; row-gap: 12px; }
+.hero .proofline { margin-top: 22px; }
