@@ -6,7 +6,7 @@
       <h2>{{cl_h2}}</h2>
       <p class="sub">{{cl_sub}}</p>
       <form class="contact-form" id="contact-form" action="{{form_action}}" method="post"
-            data-sending="{{f_sending}}" data-ok="{{f_ok}}" data-err="{{f_err}}">
+            data-sending="{{f_sending}}" data-ok="{{f_ok}}" data-err="{{f_err}}" data-email-err="{{f_email_err}}">
         <input type="hidden" name="subject" value="{{form_subject}}">
         <input type="hidden" name="_lang" value="{{lang}}">
         <div class="hp" aria-hidden="true"><label>Website <input type="text" name="_website" tabindex="-1" autocomplete="off"></label></div>
@@ -14,7 +14,7 @@
           <label>{{f_name}}<input type="text" name="name" required autocomplete="name"></label>
           <label>{{f_org}}<input type="text" name="organisation" autocomplete="organization"></label>
         </div>
-        <label>{{f_email}}<input type="email" name="email" required autocomplete="email"></label>
+        <label>{{f_email}}<input type="email" name="email" required autocomplete="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="{{f_email_err}}"></label>
         <label>{{f_msg}}<textarea name="message" rows="4" required placeholder="{{f_msg_ph}}"></textarea></label>
         <p class="f-note">{{f_note}}</p>
         <button class="btn btn-primary" type="submit">{{f_submit}}</button>

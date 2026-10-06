@@ -498,3 +498,4 @@ footer .foot-links { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px 
 .closing .cl-mail { margin-top: 18px; font-size: 0.9rem; color: var(--text-3); }
 @media (max-width: 520px) { .contact-form .f-row { grid-template-columns: 1fr; } }
 .contact-form .f-status.err { color: var(--amber-300); }
+.contact-form input.bad, .contact-form input:user-invalid { border-color: #fda4af; box-shadow: 0 0 0 3px rgba(253, 164, 175, .15); }

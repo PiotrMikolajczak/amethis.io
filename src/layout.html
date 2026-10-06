@@ -78,12 +78,21 @@
 <script>
 (function () {
   var form = document.getElementById('contact-form');
+  if (form) {
+    // Browsers accept addresses like "name@host"; require a real domain and explain the error in the page language.
+    var email = form.elements['email'], emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
+    var checkEmail = function () { email.setCustomValidity(emailRe.test(email.value.trim()) ? '' : form.dataset.emailErr); };
+    email.addEventListener('input', checkEmail);
+    email.addEventListener('blur', function () { checkEmail(); email.classList.toggle('bad', !!email.value && !email.validity.valid); });
+    form.addEventListener('submit', checkEmail, true);
+  }
   if (form && window.fetch && window.FormData) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var status = form.querySelector('.f-status'), button = form.querySelector('button');
       var done = function () { form.reset(); form.classList.add('sent'); status.textContent = form.dataset.ok; };
       if (form.elements['_website'].value) { done(); return; }
+      if (!emailRe.test(email.value.trim())) { email.classList.add('bad'); email.reportValidity(); return; }
       button.disabled = true; status.classList.remove('err'); status.textContent = form.dataset.sending;
       fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
         .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
