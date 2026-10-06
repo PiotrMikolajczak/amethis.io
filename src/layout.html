@@ -78,6 +78,19 @@
 <script>
 (function () {
   var form = document.getElementById('contact-form');
+  // The contact form starts collapsed behind one button and opens on any #contact link or address.
+  var openBtn = document.querySelector('.cl-open');
+  var openForm = function (focus) {
+    var f = document.getElementById('contact-form');
+    if (!f || f.classList.contains('open')) return;
+    f.classList.add('open');
+    if (openBtn) { openBtn.setAttribute('aria-expanded', 'true'); openBtn.hidden = true; }
+    if (focus) { var first = f.querySelector('input[name=name]'); if (first) first.focus({ preventScroll: true }); }
+  };
+  if (openBtn) openBtn.addEventListener('click', function () { openForm(true); });
+  document.querySelectorAll('a[href="#contact"]').forEach(function (a) { a.addEventListener('click', function () { openForm(false); }); });
+  if (location.hash === '#contact') openForm(false);
+  window.addEventListener('hashchange', function () { if (location.hash === '#contact') openForm(false); });
   if (form) {
     // Browsers accept addresses like "name@host"; require a real domain and explain the error in the page language.
     var email = form.elements['email'], emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;

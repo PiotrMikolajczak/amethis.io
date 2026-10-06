@@ -502,3 +502,8 @@ footer .foot-links { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px 
 /* hero: more air between the CTA buttons and the benefit bullets */
 .hero .benefits { margin-top: 64px; padding-top: 26px; row-gap: 12px; }
 .hero .proofline { margin-top: 22px; }
+/* contact form collapsed until asked for (always open without JavaScript) */
+html:not(.no-js) .contact-form:not(.open) { display: none; }
+.no-js .cl-open { display: none; }
+.closing .cl-open { margin-top: 26px; }
+.closing .cl-open[hidden] { display: none; }
