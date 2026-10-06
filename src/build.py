@@ -16,6 +16,8 @@ ROOT = Path(__file__).resolve().parent.parent
 LAYOUT = (ROOT / "src" / "layout.html").read_text(encoding="utf-8")
 BLOCKS = ROOT / "src" / "blocks"
 SITE = "https://amethis.io"
+# Contact form relay: SimplyForms (EU, stores nothing); plain POST returns JSON, so the page submits it with fetch().
+FORM_ENDPOINT = "https://api.simplyforms.app/v1/forms/e2O5428PwgKOOIFy9Fhn2w"
 
 EN = {
     "lang": "en", "og_locale": "en_GB", "base": "", "home": "/", "canonical": "https://amethis.io/",
@@ -119,9 +121,21 @@ EN = {
     "cl_cta": "Show us one process",
     "ft_eu": "Made in the European Union",
     "ft_privacy": "This site sets no cookies and loads nothing from third parties.",
+    "cl_or": "or write to",
+    "f_err": "Sending failed. Please write to info@amethis.io.",
+    "f_ok": "Thank you – your message is on its way. We will get back to you shortly.",
+    "f_sending": "Sending…",
+    "f_submit": "Book the conversation",
+    "f_note": "We use your details only to reply – no newsletter, no cookies.",
+    "f_msg_ph": "A few sentences are enough.",
+    "f_msg": "Which process would you like to change?",
+    "f_email": "Work e-mail",
+    "f_org": "Organisation",
+    "f_name": "Name",
+    "form_subject": "Amethis – website enquiry",
     "lg_ip_p": "Amethis is a brand of its operator. The texts and graphics on this website may not be reproduced without permission. Fonts: Inter and JetBrains Mono, under the SIL Open Font License.",
     "lg_ip_h": "Trademarks and content",
-    "lg_priv_p": "This website sets no cookies, uses no analytics and loads nothing from third parties. It is hosted on GitHub Pages; to deliver the pages, the host processes technical data such as IP addresses. If you write to us, we use your e-mail only to reply.",
+    "lg_priv_p": "This website sets no cookies, uses no analytics and loads nothing from third parties. It is hosted on GitHub Pages; to deliver the pages, the host processes technical data such as IP addresses. Messages sent through the contact form are relayed to our mailbox by SimplyForms, an EU-based service that does not store them. We use your details only to reply.",
     "lg_priv_h": "Privacy",
     "lg_contact_h": "Contact",
     "lg_op_h": "Operator",
@@ -326,9 +340,21 @@ PL.update({
     "cl_cta": "Pokaż nam jeden proces",
     "ft_eu": "Wyprodukowano w Unii Europejskiej",
     "ft_privacy": "Ta strona nie ustawia ciasteczek i niczego nie pobiera od stron trzecich.",
+    "cl_or": "albo napisz na",
+    "f_err": "Nie udało się wysłać. Napisz proszę na info@amethis.io.",
+    "f_ok": "Dziękujemy – wiadomość została wysłana. Wkrótce się odezwiemy.",
+    "f_sending": "Wysyłanie…",
+    "f_submit": "Umów rozmowę",
+    "f_note": "Twoje dane wykorzystamy wyłącznie do odpowiedzi – bez newslettera i bez ciasteczek.",
+    "f_msg_ph": "Wystarczy kilka zdań.",
+    "f_msg": "Jaki proces chcesz zmienić?",
+    "f_email": "E-mail służbowy",
+    "f_org": "Organizacja",
+    "f_name": "Imię i nazwisko",
+    "form_subject": "Amethis – zapytanie ze strony",
     "lg_ip_p": "Amethis jest marką operatora serwisu. Teksty i grafiki z tej strony nie mogą być powielane bez zgody. Fonty: Inter i JetBrains Mono, na licencji SIL Open Font License.",
     "lg_ip_h": "Znaki i treści",
-    "lg_priv_p": "Ta strona nie ustawia ciasteczek, nie używa analityki i niczego nie pobiera od stron trzecich. Jest hostowana w GitHub Pages; aby dostarczyć strony, dostawca hostingu przetwarza dane techniczne, takie jak adresy IP. Jeśli do nas napiszesz, Twój adres e-mail wykorzystamy wyłącznie do odpowiedzi.",
+    "lg_priv_p": "Ta strona nie ustawia ciasteczek, nie używa analityki i niczego nie pobiera od stron trzecich. Jest hostowana w GitHub Pages; aby dostarczyć strony, dostawca hostingu przetwarza dane techniczne, takie jak adresy IP. Wiadomości z formularza kontaktowego przekazuje do naszej skrzynki SimplyForms – usługa działająca w UE, która ich nie przechowuje. Twoje dane wykorzystujemy wyłącznie do odpowiedzi.",
     "lg_priv_h": "Prywatność",
     "lg_contact_h": "Kontakt",
     "lg_op_h": "Operator",
@@ -533,8 +559,8 @@ PAGES = {
     "governance": ("governance/", ["governance", "closing"], True),
     "opaw": ("solutions/operational-awareness/", ["opaw", "closing"], True),
     "pricing": ("pricing/", ["pricing", "closing"], True),
-    "partners": ("partners/", ["partners"], True),
-    "legal": ("legal/", ["legal"], True),
+    "partners": ("partners/", ["partners", "closing"], True),
+    "legal": ("legal/", ["legal", "closing"], True),
 }
 
 
@@ -599,7 +625,7 @@ def main() -> None:
         prefix = "/" if lang == "en" else "/pl/"
         for page, (slug, blocks, promote) in PAGES.items():
             content = {**base, **pages[page]}
-            content.update(lp=prefix, css_v=css_v, imprint=imprint(lang), lg_op_p=imprint(lang),
+            content.update(lp=prefix, css_v=css_v, form_action=FORM_ENDPOINT, imprint=imprint(lang), lg_op_p=imprint(lang),
                            canonical=f"{SITE}{prefix}{slug}", url_en=f"{SITE}/{slug}", url_pl=f"{SITE}/pl/{slug}",
                            href_en=f"/{slug}", href_pl=f"/pl/{slug}")
             content["jsonld"] = structured_data(content, page)

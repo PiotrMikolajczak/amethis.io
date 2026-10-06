@@ -5,10 +5,22 @@
       <div class="label">{{cl_label}}</div>
       <h2>{{cl_h2}}</h2>
       <p class="sub">{{cl_sub}}</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:info@amethis.io?subject={{mail_subject}}">{{cl_cta}}</a>
-      </div>
-      <p style="margin-top:22px"><a class="mail" href="mailto:info@amethis.io">info@amethis.io</a></p>
+      <form class="contact-form" id="contact-form" action="{{form_action}}" method="post"
+            data-sending="{{f_sending}}" data-ok="{{f_ok}}" data-err="{{f_err}}">
+        <input type="hidden" name="subject" value="{{form_subject}}">
+        <input type="hidden" name="_lang" value="{{lang}}">
+        <div class="hp" aria-hidden="true"><label>Website <input type="text" name="_website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="f-row">
+          <label>{{f_name}}<input type="text" name="name" required autocomplete="name"></label>
+          <label>{{f_org}}<input type="text" name="organisation" autocomplete="organization"></label>
+        </div>
+        <label>{{f_email}}<input type="email" name="email" required autocomplete="email"></label>
+        <label>{{f_msg}}<textarea name="message" rows="4" required placeholder="{{f_msg_ph}}"></textarea></label>
+        <p class="f-note">{{f_note}}</p>
+        <button class="btn btn-primary" type="submit">{{f_submit}}</button>
+        <p class="f-status" role="status" aria-live="polite"></p>
+      </form>
+      <p class="cl-mail">{{cl_or}} <a class="mail" href="mailto:info@amethis.io">info@amethis.io</a></p>
       <p class="cl-alt"><a href="{{lp}}partners/">{{cl_alt}}</a></p>
     </div>
   </div>

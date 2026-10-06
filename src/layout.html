@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; base-uri 'self'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://api.simplyforms.app; base-uri 'self'; form-action https://api.simplyforms.app">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>{{meta_title}}</title>
   <meta name="description" content="{{meta_desc}}">
@@ -56,7 +56,7 @@
       <a href="{{href_en}}" hreflang="en" lang="en" aria-current="{{cur_en}}">EN</a>
       <a href="{{href_pl}}" hreflang="pl" lang="pl" aria-current="{{cur_pl}}">PL</a>
     </nav>
-    <a class="btn btn-primary" href="mailto:info@amethis.io?subject={{mail_subject}}">{{nav_cta}}</a>
+    <a class="btn btn-primary" href="#contact">{{nav_cta}}</a>
   </div>
 </header>
 
@@ -77,6 +77,20 @@
 
 <script>
 (function () {
+  var form = document.getElementById('contact-form');
+  if (form && window.fetch && window.FormData) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var status = form.querySelector('.f-status'), button = form.querySelector('button');
+      var done = function () { form.reset(); form.classList.add('sent'); status.textContent = form.dataset.ok; };
+      if (form.elements['_website'].value) { done(); return; }
+      button.disabled = true; status.classList.remove('err'); status.textContent = form.dataset.sending;
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+        .then(function (d) { if (d && d.success) { done(); } else { throw new Error('rejected'); } })
+        .catch(function () { status.classList.add('err'); status.textContent = form.dataset.err; button.disabled = false; });
+    });
+  }
   var els = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
   var io = new IntersectionObserver(function (entries) {

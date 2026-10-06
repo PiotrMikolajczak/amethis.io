@@ -480,3 +480,21 @@ footer .foot-links { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px 
 .legal { max-width: 46em; margin-top: 28px; }
 .legal h3 { font-size: 1.02rem; font-weight: 600; margin: 26px 0 8px; }
 .legal p { color: var(--text-2); }
+
+/* contact form (SimplyForms relay) */
+.contact-form { max-width: 560px; margin: 28px auto 0; display: grid; gap: 14px; text-align: left; }
+.contact-form .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.contact-form label { display: grid; gap: 6px; font-size: 0.85rem; font-weight: 600; color: var(--text-2); }
+.contact-form input, .contact-form textarea { font: 400 0.95rem/1.4 var(--font-sans); color: var(--text-1); background: rgba(11, 10, 16, .7);
+  border: 1px solid var(--border); border-radius: 10px; padding: 11px 13px; width: 100%; }
+.contact-form textarea { resize: vertical; min-height: 96px; }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--violet-400); box-shadow: 0 0 0 3px rgba(167, 139, 250, .2); }
+.contact-form .f-note { font-size: 0.8rem; color: var(--text-3); margin: 0; }
+.contact-form .btn { justify-self: start; }
+.contact-form .btn[disabled] { opacity: .6; cursor: progress; }
+.contact-form .f-status { margin: 0; font-size: 0.9rem; color: var(--emerald-300); min-height: 1.2em; }
+.contact-form.sent label, .contact-form.sent .f-row, .contact-form.sent .btn, .contact-form.sent .f-note { display: none; }
+.contact-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.closing .cl-mail { margin-top: 18px; font-size: 0.9rem; color: var(--text-3); }
+@media (max-width: 520px) { .contact-form .f-row { grid-template-columns: 1fr; } }
+.contact-form .f-status.err { color: var(--amber-300); }
