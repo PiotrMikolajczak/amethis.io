@@ -372,7 +372,7 @@ footer .imprint { flex-basis: 100%; font-size: 0.78rem; color: var(--text-3); }
   .wide { grid-template-columns: 1fr; }
 }
 .hero h1 { font-size: clamp(2.1rem, 4.3vw, 3.35rem); line-height: 1.07; }
-.scene { aspect-ratio: 600 / 569; }
+.scene { aspect-ratio: 600 / 586; }
 .points li { grid-template-columns: 40px minmax(0, 1fr); }
 @media (max-width: 880px) {
   .steps, .control { grid-template-columns: 1fr; }

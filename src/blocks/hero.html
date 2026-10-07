@@ -18,7 +18,7 @@
     </div>
 
     <div class="scene" role="img" aria-label="{{scene_alt}}">
-      <svg class="world" viewBox="0 -9 600 569" aria-hidden="true">
+      <svg class="world" viewBox="0 -26 600 586" aria-hidden="true">
         <style>
         .world .g-cap { font: 600 10.5px 'JetBrains Mono', ui-monospace, Menlo, monospace; letter-spacing: .1em; fill: #c4b5fd; }
         .world .g-req { font: 500 12.5px Inter, system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #f0f0f2; }
@@ -35,17 +35,17 @@
         </defs>
 
         <!-- 1 · requirement in business language -->
-        <rect x="60" y="5" width="480" height="96" rx="14" fill="#15131c" stroke="#3a3550"/>
-        <g transform="translate(82 21)" fill="none" stroke="#c4b5fd" stroke-width="1.4" stroke-linecap="round"><path d="M2 1h8l4 4v10H2Z"/><path d="M5 9h6M5 12h4"/></g>
-        <text class="g-cap" x="104" y="33">{{g_req_cap}}</text>
-        <text class="g-req" x="82" y="61">{{g_req1}}</text>
-        <text class="g-req" x="82" y="83">{{g_req2}}<tspan class="caret" fill="#a78bfa">▍</tspan></text>
+        <rect x="60" y="-12" width="480" height="96" rx="14" fill="#15131c" stroke="#3a3550"/>
+        <g transform="translate(82 4)" fill="none" stroke="#c4b5fd" stroke-width="1.4" stroke-linecap="round"><path d="M2 1h8l4 4v10H2Z"/><path d="M5 9h6M5 12h4"/></g>
+        <text class="g-cap" x="104" y="16">{{g_req_cap}}</text>
+        <text class="g-req" x="82" y="44">{{g_req1}}</text>
+        <text class="g-req" x="82" y="66">{{g_req2}}<tspan class="caret" fill="#a78bfa">▍</tspan></text>
 
         <!-- digital twin: a shadow copy of the running system, offset up and right like the twin icon -->
         <rect x="36" y="120" width="560" height="284" rx="22" fill="#8b5cf6" fill-opacity=".07" stroke="#6a5da8" stroke-opacity=".75" stroke-width="1.1" stroke-dasharray="4 4"/>
         <text class="g-cap" x="582" y="137" text-anchor="end">{{g_twin_cap}}</text>
 
-        <path d="M150 101 V140" stroke="#a78bfa" stroke-width="1.6" class="flow" fill="none"/>
+        <path d="M150 84 V140" stroke="#a78bfa" stroke-width="1.6" class="flow" fill="none"/>
         <path d="M144 133 150 140 156 133" stroke="#a78bfa" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
         <!-- 2 · the governed system Amethis builds and runs; the opaque backing keeps the twin's dashed edge from showing through -->
