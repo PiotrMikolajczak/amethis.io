@@ -41,10 +41,15 @@
         <text class="g-req" x="82" y="70">{{g_req1}}</text>
         <text class="g-req" x="82" y="92">{{g_req2}}<tspan class="caret" fill="#a78bfa">▍</tspan></text>
 
-        <path d="M300 110 V140" stroke="#a78bfa" stroke-width="1.6" class="flow" fill="none"/>
-        <path d="M294 133 300 140 306 133" stroke="#a78bfa" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- digital twin: a shadow copy of the running system, offset up and right like the twin icon -->
+        <rect x="36" y="120" width="560" height="284" rx="22" fill="#8b5cf6" fill-opacity=".07" stroke="#6a5da8" stroke-opacity=".75" stroke-width="1.1" stroke-dasharray="4 4"/>
+        <text class="g-cap" x="582" y="138" text-anchor="end">{{g_twin_cap}}</text>
 
-        <!-- 2 · the governed system Amethis builds and runs -->
+        <path d="M150 110 V140" stroke="#a78bfa" stroke-width="1.6" class="flow" fill="none"/>
+        <path d="M144 133 150 140 156 133" stroke="#a78bfa" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- 2 · the governed system Amethis builds and runs; the opaque backing keeps the twin's dashed edge from showing through -->
+        <rect x="20" y="146" width="560" height="284" rx="22" fill="#0b0a10"/>
         <rect x="20" y="146" width="560" height="284" rx="22" fill="url(#g-frame)" stroke="#6a5da8" stroke-width="1.2" stroke-dasharray="10 6"/>
         <text class="g-cap" x="44" y="174">{{g_build_cap}}</text>
 

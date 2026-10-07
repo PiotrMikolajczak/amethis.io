@@ -34,11 +34,12 @@ EN = {
     "hero_lede": "One governed platform turns your requirements into working applications, data, processes and integrations – in weeks, an order of magnitude faster than building and integrating systems today. AI agents work on the same data and under the same rules as your people, and your people approve what matters.",
     "hero_cta1": "Show us one process", "hero_cta2": "See the two-week build",
     "ben1": "Working system in weeks, not years", "ben2": "Records and audit trail for regulators", "ben3": "On your servers or in your own Azure, Google Cloud or AWS",
-    "scene_alt": "You describe how you work; Amethis builds applications, data, integrations and rules and runs the process: a request arrives, an AI agent checks it, a manager approves, the agent completes it – within permissions, audit trail and compliance, connected to your data sources, with every change rehearsed before it goes live.",
+    "scene_alt": "You describe how you work; Amethis builds applications, data, integrations and rules and runs the process: a request arrives, an AI agent checks it, a manager approves, the agent completes it – within permissions, audit trail and compliance, connected to your data sources; behind it runs its digital twin, where every change is validated and optimised before it goes live.",
     "g_req_cap": "1 · YOU DESCRIBE HOW YOU WORK",
     "g_req1": "“When a request arrives, check it against our rules.",
     "g_req2": "Above €10,000 a manager approves. Then notify the client.”",
     "g_build_cap": "2 · AMETHIS BUILDS IT AND RUNS IT",
+    "g_twin_cap": "DIGITAL TWIN · VALIDATION & OPTIMISATION",
     "g_t1": "Applications", "g_t2": "Data", "g_t3": "Integrations", "g_t4": "Rules",
     "g_live": "LIVE PROCESS",
     "g_s1": "Request", "g_s1s": "arrives", "g_s2": "AI agent", "g_s2s": "checks & prepares",
@@ -46,7 +47,7 @@ EN = {
     "g_wait": "awaiting approval",
     "g_p1": "Permissions", "g_p2": "Audit trail", "g_p3": "Compliance",
     "g_legacy_h": "Your data sources", "g_legacy_p1": "many databases → one golden source,", "g_legacy_p2": "with a semantic layer",
-    "g_twin_h": "Rehearsal", "g_twin_p1": "replay history on the new rule,", "g_twin_p2": "compare variants before go-live",
+    "g_twin_h": "Rehearsal", "g_twin_p1": "replay history on the new rule,", "g_twin_p2": "compare variants, pick the best plan",
 
     "how_label": "How it works",
     "how_h2": "You describe how you work. Amethis builds it – and runs it.",
@@ -111,7 +112,7 @@ EN = {
 
     "pn_label": "For software houses and integrators",
     "pn_h2": "Software houses: your next business model.",
-    "pn_sub": "AI makes code cheap to write – and leaves organisations with silos that are hard to govern and give agents no safe place to work. With Amethis your team delivers connected, compliant systems instead: larger programmes with a smaller team, while you keep the delivery, support and recurring revenue.",
+    "pn_sub": "AI makes code cheap to write – and leaves organisations with silos that are hard to govern and give agents no safe place to work. With Amethis your team delivers connected, compliant systems instead: larger programmes with a smaller team, while you keep the delivery, support and recurring revenue. On top of that, for every client you bring we pay you 15% of the platform licence in the first year and 10% of every renewal – whoever runs the installation later.",
     "pn_c1": "Deployment and support stay with you.", "pn_c2": "Source-code escrow protects both you and your client.", "pn_c3": "Start safely: one process, a pilot, or running alongside an existing system.",
     "pn_cta": "Become a partner",
 
@@ -255,11 +256,12 @@ PL.update({
     "hero_lede": "Jedna platforma pod kontrolą zamienia Twoje wymagania w działające aplikacje, dane, procesy i integracje – w tygodnie, o rząd wielkości szybciej niż dzisiejsza budowa i łączenie systemów. Agenci AI pracują na tych samych danych i według tych samych reguł co Twoi ludzie, a ludzie zatwierdzają to, co ważne.",
     "hero_cta1": "Pokaż nam jeden proces", "hero_cta2": "Zobacz system zbudowany w dwa tygodnie",
     "ben1": "Działający system w tygodnie, nie w lata", "ben2": "Rejestry i ślad audytu dla regulatorów", "ben3": "Na Twoich serwerach albo w Twoim Azure, Google Cloud lub AWS",
-    "scene_alt": "Opisujesz, jak pracujecie; Amethis buduje aplikacje, dane, integracje i reguły i prowadzi proces: wpływa wniosek, agent AI go sprawdza, kierownik zatwierdza, agent kończy sprawę – w ramach uprawnień, śladu audytu i zgodności, połączony z Twoimi źródłami danych, a każda zmiana jest przećwiczona przed wdrożeniem.",
+    "scene_alt": "Opisujesz, jak pracujecie; Amethis buduje aplikacje, dane, integracje i reguły i prowadzi proces: wpływa wniosek, agent AI go sprawdza, kierownik zatwierdza, agent kończy sprawę – w ramach uprawnień, śladu audytu i zgodności, połączony z Twoimi źródłami danych; za nim działa jego cyfrowy bliźniak, na którym każda zmiana jest sprawdzana i optymalizowana przed wdrożeniem.",
     "g_req_cap": "1 · OPISUJESZ, JAK PRACUJECIE",
     "g_req1": "„Gdy wpłynie wniosek, sprawdź go według naszych reguł.",
     "g_req2": "Powyżej 10 000 € zatwierdza kierownik. Potem powiadom klienta.”",
     "g_build_cap": "2 · AMETHIS TO BUDUJE I URUCHAMIA",
+    "g_twin_cap": "CYFROWY BLIŹNIAK · WALIDACJA I OPTYMALIZACJA",
     "g_t1": "Aplikacje", "g_t2": "Dane", "g_t3": "Integracje", "g_t4": "Reguły",
     "g_live": "PROCES NA ŻYWO",
     "g_s1": "Wniosek", "g_s1s": "wpływa", "g_s2": "Agent AI", "g_s2s": "sprawdza, przygotowuje",
@@ -267,7 +269,7 @@ PL.update({
     "g_wait": "czeka na decyzję",
     "g_p1": "Uprawnienia", "g_p2": "Ślad audytu", "g_p3": "Zgodność",
     "g_legacy_h": "Twoje źródła danych", "g_legacy_p1": "wiele baz → jedno źródło prawdy,", "g_legacy_p2": "z warstwą semantyczną",
-    "g_twin_h": "Próba", "g_twin_p1": "odtwórz historię na nowej regule,", "g_twin_p2": "porównaj warianty przed wdrożeniem",
+    "g_twin_h": "Próba", "g_twin_p1": "odtwórz historię na nowej regule,", "g_twin_p2": "porównaj warianty, wybierz najlepszy plan",
 
     "how_label": "Jak to działa",
     "how_h2": "Opisujesz, jak pracujecie. Amethis to buduje – i uruchamia.",
@@ -332,7 +334,7 @@ PL.update({
 
     "pn_label": "Dla software house'ów i integratorów",
     "pn_h2": "Software house'y: wasz następny model biznesowy.",
-    "pn_sub": "AI sprawia, że kod jest tani w pisaniu – i zostawia organizacje z silosami, którymi trudno zarządzać i w których agenci nie mają bezpiecznego miejsca pracy. Z Amethis Twój zespół dostarcza w zamian spójne, zgodne z regulacjami systemy: większe programy mniejszym zespołem, a wdrożenie, utrzymanie i przychód powtarzalny zostają po Twojej stronie.",
+    "pn_sub": "AI sprawia, że kod jest tani w pisaniu – i zostawia organizacje z silosami, którymi trudno zarządzać i w których agenci nie mają bezpiecznego miejsca pracy. Z Amethis Twój zespół dostarcza w zamian spójne, zgodne z regulacjami systemy: większe programy mniejszym zespołem, a wdrożenie, utrzymanie i przychód powtarzalny zostają po Twojej stronie. Do tego za każdego klienta, którego przyprowadzisz, płacimy Ci 15% licencji platformy w pierwszym roku i 10% od każdego odnowienia – niezależnie od tego, kto później prowadzi instalację.",
     "pn_c1": "Wdrożenie i utrzymanie zostają po waszej stronie.", "pn_c2": "Depozyt kodu źródłowego chroni was i waszego klienta.", "pn_c3": "Bezpieczny start: jeden proces, pilotaż albo praca obok istniejącego systemu.",
     "pn_cta": "Zostań partnerem",
 
