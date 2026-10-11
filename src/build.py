@@ -94,7 +94,7 @@ EN = {
 
     "tr_label": "Trust and sovereignty",
     "tr_h2": "Built for organisations that cannot afford to lose control.",
-    "tr_sub": "Public administration, critical infrastructure, defence, finance, healthcare – wherever data is sensitive and the rules are strict. Made in the European Union.",
+    "tr_sub": "Public administration, critical infrastructure, defence, finance, healthcare, manufacturing, logistics – wherever data is sensitive and the rules are strict. Made in the European Union.",
     "t1_h": "Your infrastructure", "t1_p": "Runs on your servers, in your own Azure, Google Cloud or AWS account, or in networks cut off from the internet – the AI model included. Never a shared cloud service.",
     "t2_h": "Regulation, operationalised", "t2_p": "Configurable registers, workflows and evidence designed to support your GDPR, NIS2 and AI Act programmes – part of the running system, not a separate project.",
     "t3_h": "Security for classified and isolated environments", "t3_p": "Classification labels on every record, permissions computed per row, evidence collected for accreditation. Accreditation is granted per installation by the competent authority.",
@@ -318,7 +318,7 @@ PL.update({
 
     "tr_label": "Zaufanie i suwerenność",
     "tr_h2": "Zbudowany dla organizacji, które nie mogą stracić kontroli.",
-    "tr_sub": "Administracja publiczna, infrastruktura krytyczna, obronność, finanse, ochrona zdrowia – wszędzie tam, gdzie dane są wrażliwe, a reguły surowe. Wyprodukowano w Unii Europejskiej.",
+    "tr_sub": "Administracja publiczna, infrastruktura krytyczna, obronność, finanse, ochrona zdrowia, produkcja, logistyka – wszędzie tam, gdzie dane są wrażliwe, a reguły surowe. Wyprodukowano w Unii Europejskiej.",
     "t1_h": "Twoja infrastruktura", "t1_p": "Działa na Twoich serwerach, na Twoim koncie Azure, Google Cloud lub AWS albo w sieciach odciętych od internetu – razem z modelem AI. Nigdy jako współdzielona usługa chmurowa.",
     "t2_h": "Regulacje w działaniu", "t2_p": "Konfigurowalne rejestry, obiegi i dowody zaprojektowane do wspierania Twoich programów RODO, NIS2 i AI Act – część działającego systemu, a nie osobny projekt.",
     "t3_h": "Bezpieczeństwo dla środowisk niejawnych i odizolowanych", "t3_p": "Etykiety klasyfikacji na każdym rekordzie, uprawnienia liczone per wiersz, dowody zbierane pod akredytację. Akredytację nadaje właściwy organ dla konkretnej instalacji.",
