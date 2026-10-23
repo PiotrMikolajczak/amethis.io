@@ -57,6 +57,7 @@ EN = {
     "st3_h": "People and agents work together", "st3_p": "Everyone works in one shared environment: agents prepare and carry out the work, people decide where it matters, and everything stays in sync in real time.",
     "twin_h": "Rehearse before you change",
     "twin_p": "Replay real history against a new rule or step, see the effect, compare variants – then approve, or roll back at any time.",
+    "how_pdf": "How we work (PDF)", "how_pdf_href": "/assets/docs/amethis-how-we-work-en.pdf",
     "how_note": "Why it is both fast and trustworthy: you configure only the business logic – every other mechanism, from permissions and audit to integrations and scaling, comes with the platform. That configuration is versioned and validated before it runs, and there is no code to write or maintain. <b>You build faster – and every change can be checked.</b>",
 
     "one_label": "One platform instead of six",
@@ -113,7 +114,8 @@ EN = {
     "pn_label": "For software houses and integrators",
     "pn_h2": "Software houses: your next business model.",
     "pn_sub": "AI makes code cheap to write – and leaves organisations with silos that are hard to govern and give agents no safe place to work. With Amethis your team delivers connected, compliant systems instead: larger programmes with a smaller team, while you keep the delivery, support and recurring revenue. On top of that, for every client you bring we pay you 15% of the platform licence in the first year and 10% of every renewal – whoever runs the installation later.",
-    "pn_c1": "Deployment and support stay with you.", "pn_c2": "Source-code escrow protects both you and your client.", "pn_c3": "Start safely: one process, a pilot, or running alongside an existing system.",
+    "pn_c1": "Deployment, analysis and design, data management and migration, testing, training and support stay with you.", "pn_c2": "Source-code escrow protects both you and your client.", "pn_c3": "Start safely: one process, a pilot, or running alongside an existing system.",
+    "pn_c4": "Your own extensions and industry applications remain yours.",
     "pn_cta": "Become a partner",
     "pn_pdf": "How we work (PDF)", "pn_pdf_href": "/assets/docs/amethis-how-we-work-en.pdf",
 
@@ -282,6 +284,7 @@ PL.update({
     "st3_h": "Ludzie i agenci pracują razem", "st3_p": "Wszyscy pracują w jednym wspólnym środowisku: agenci przygotowują i wykonują pracę, ludzie decydują tam, gdzie to ważne, a całość jest zsynchronizowana na bieżąco.",
     "twin_h": "Przećwicz, zanim zmienisz",
     "twin_p": "Odtwórz prawdziwą historię na nowej regule albo kroku, zobacz skutek, porównaj warianty – potem zatwierdź albo w każdej chwili cofnij.",
+    "how_pdf": "Jak działamy (PDF)", "how_pdf_href": "/assets/docs/amethis-jak-dzialamy-pl.pdf",
     "how_note": "Dlaczego to jest jednocześnie szybkie i godne zaufania: konfigurujesz wyłącznie logikę biznesową – wszystkie pozostałe mechanizmy, od uprawnień i audytu po integracje i skalowanie, dostarcza platforma. Ta konfiguracja jest wersjonowana i sprawdzana, zanim zacznie działać, a kodu nie trzeba pisać ani utrzymywać. <b>Budujesz szybciej – i możesz sprawdzić każdą zmianę.</b>",
 
     "one_label": "Jedna platforma zamiast sześciu",
@@ -338,7 +341,8 @@ PL.update({
     "pn_label": "Dla software house'ów i integratorów",
     "pn_h2": "Software house'y: wasz następny model biznesowy.",
     "pn_sub": "AI sprawia, że kod jest tani w pisaniu – i zostawia organizacje z silosami, którymi trudno zarządzać i w których agenci nie mają bezpiecznego miejsca pracy. Z Amethis Twój zespół dostarcza w zamian spójne, zgodne z regulacjami systemy: większe programy mniejszym zespołem, a wdrożenie, utrzymanie i przychód powtarzalny zostają po Twojej stronie. Do tego za każdego klienta, którego przyprowadzisz, płacimy Ci 15% licencji platformy w pierwszym roku i 10% od każdego odnowienia – niezależnie od tego, kto później prowadzi instalację.",
-    "pn_c1": "Wdrożenie i utrzymanie zostają po waszej stronie.", "pn_c2": "Depozyt kodu źródłowego chroni was i waszego klienta.", "pn_c3": "Bezpieczny start: jeden proces, pilotaż albo praca obok istniejącego systemu.",
+    "pn_c1": "Wdrożenie, analiza i projektowanie, zarządzanie danymi i ich przeniesienie, testy, szkolenia i utrzymanie zostają po waszej stronie.", "pn_c2": "Depozyt kodu źródłowego chroni was i waszego klienta.", "pn_c3": "Bezpieczny start: jeden proces, pilotaż albo praca obok istniejącego systemu.",
+    "pn_c4": "Własne rozszerzenia i aplikacje branżowe pozostają wasze.",
     "pn_cta": "Zostań partnerem",
     "pn_pdf": "Jak działamy (PDF)", "pn_pdf_href": "/assets/docs/amethis-jak-dzialamy-pl.pdf",
 
