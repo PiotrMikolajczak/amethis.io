@@ -23,13 +23,13 @@ EN = {
     "lang": "en", "og_locale": "en_GB", "base": "", "home": "/", "canonical": "https://amethis.io/",
     "href_en": "/", "href_pl": "/pl/", "cur_en": "true", "cur_pl": "false",
     "meta_title": "Amethis – AI agents and processes under your control",
-    "meta_desc": "Governed operations platform: AI agents and people run your processes with human approval, audit trail and a digital twin – on your own servers or cloud.",
+    "meta_desc": "Executable Operating Model – a governed operations platform: AI agents and people run your processes with human approval, audit trail and a digital twin – on your own servers or cloud.",
     "skip": "Skip to content", "lang_label": "Language",
     "nav_how": "How it works", "nav_control": "People & agents", "nav_path": "Getting started",
     "nav_trust": "Trust", "nav_partners": "Partners", "nav_cta": "Contact",
     "mail_subject": "Amethis%20%E2%80%93%20introduction", "mail_subject_partner": "Amethis%20%E2%80%93%20partnership",
 
-    "hero_eyebrow": "Governed operations platform · for regulated organisations",
+    "hero_eyebrow": "Executable Operating Model · a governed operations platform for regulated organisations",
     "hero_h1": "Describe how your organisation works. Amethis runs it – with people and AI agents,", "hero_h1_grad": "under your control.",
     "hero_lede": "One governed platform turns your requirements into working applications, data, processes and integrations – in weeks, an order of magnitude faster than building and integrating systems today. AI agents work on the same data and under the same rules as your people, and your people approve what matters.",
     "hero_cta1": "Show us one process", "hero_cta2": "See the two-week build",
@@ -115,6 +115,7 @@ EN = {
     "pn_sub": "AI makes code cheap to write – and leaves organisations with silos that are hard to govern and give agents no safe place to work. With Amethis your team delivers connected, compliant systems instead: larger programmes with a smaller team, while you keep the delivery, support and recurring revenue. On top of that, for every client you bring we pay you 15% of the platform licence in the first year and 10% of every renewal – whoever runs the installation later.",
     "pn_c1": "Deployment and support stay with you.", "pn_c2": "Source-code escrow protects both you and your client.", "pn_c3": "Start safely: one process, a pilot, or running alongside an existing system.",
     "pn_cta": "Become a partner",
+    "pn_pdf": "How we work (PDF)", "pn_pdf_href": "/assets/docs/amethis-how-we-work-en.pdf",
 
     "cl_label": "European digital sovereignty",
     "cl_h2": "A data- and process-driven organisation – with people augmented by AI agents.",
@@ -247,13 +248,13 @@ PL.update({
     "lang": "pl", "og_locale": "pl_PL", "base": "../", "home": "/pl/", "canonical": "https://amethis.io/pl/",
     "cur_en": "false", "cur_pl": "true",
     "meta_title": "Amethis – agenci AI i procesy pod Twoją kontrolą",
-    "meta_desc": "Platforma operacyjna pod kontrolą: agenci AI i ludzie prowadzą procesy z akceptacją człowieka, śladem audytu i cyfrowym bliźniakiem – na Twoich serwerach.",
+    "meta_desc": "Executable Operating Model – platforma operacyjna pod kontrolą: agenci AI i ludzie prowadzą procesy z akceptacją człowieka, śladem audytu i cyfrowym bliźniakiem – na Twoich serwerach.",
     "skip": "Przejdź do treści", "lang_label": "Język",
     "nav_how": "Jak to działa", "nav_control": "Ludzie i agenci", "nav_path": "Jak zacząć",
     "nav_trust": "Zaufanie", "nav_partners": "Partnerzy", "nav_cta": "Kontakt",
     "mail_subject": "Amethis%20%E2%80%93%20rozmowa", "mail_subject_partner": "Amethis%20%E2%80%93%20partnerstwo",
 
-    "hero_eyebrow": "Platforma operacyjna pod kontrolą · dla organizacji regulowanych",
+    "hero_eyebrow": "Executable Operating Model · platforma operacyjna pod kontrolą dla organizacji regulowanych",
     "hero_h1": "Opisz, jak działa Twoja organizacja. Amethis to uruchomi – z ludźmi i agentami AI,", "hero_h1_grad": "pod Twoją kontrolą.",
     "hero_lede": "Jedna platforma pod kontrolą zamienia Twoje wymagania w działające aplikacje, dane, procesy i integracje – w tygodnie, o rząd wielkości szybciej niż dzisiejsza budowa i łączenie systemów. Agenci AI pracują na tych samych danych i według tych samych reguł co Twoi ludzie, a ludzie zatwierdzają to, co ważne.",
     "hero_cta1": "Pokaż nam jeden proces", "hero_cta2": "Zobacz system zbudowany w dwa tygodnie",
@@ -339,6 +340,7 @@ PL.update({
     "pn_sub": "AI sprawia, że kod jest tani w pisaniu – i zostawia organizacje z silosami, którymi trudno zarządzać i w których agenci nie mają bezpiecznego miejsca pracy. Z Amethis Twój zespół dostarcza w zamian spójne, zgodne z regulacjami systemy: większe programy mniejszym zespołem, a wdrożenie, utrzymanie i przychód powtarzalny zostają po Twojej stronie. Do tego za każdego klienta, którego przyprowadzisz, płacimy Ci 15% licencji platformy w pierwszym roku i 10% od każdego odnowienia – niezależnie od tego, kto później prowadzi instalację.",
     "pn_c1": "Wdrożenie i utrzymanie zostają po waszej stronie.", "pn_c2": "Depozyt kodu źródłowego chroni was i waszego klienta.", "pn_c3": "Bezpieczny start: jeden proces, pilotaż albo praca obok istniejącego systemu.",
     "pn_cta": "Zostań partnerem",
+    "pn_pdf": "Jak działamy (PDF)", "pn_pdf_href": "/assets/docs/amethis-jak-dzialamy-pl.pdf",
 
     "cl_label": "Europejska suwerenność cyfrowa",
     "cl_h2": "Organizacja oparta na danych i procesach – z ludźmi wspieranymi przez agentów AI.",
@@ -578,7 +580,7 @@ PAGES = {
 # the visible pages already say; synonyms buyers search for (e.g. "on-premise", "workflow automation") live here.
 LD = {
     "en": {
-        "category": "Governed operations platform",
+        "category": "Executable Operating Model",
         "features": ["Applications built from screens and widgets, without programming",
                      "Workflows, task queues, approvals and deputies",
                      "Real-time integration with existing systems",
@@ -597,7 +599,7 @@ LD = {
                      "operational picture", "command and control", "manufacturing", "logistics", "public sector"],
     },
     "pl": {
-        "category": "Platforma operacyjna pod kontrolą",
+        "category": "Executable Operating Model",
         "features": ["Aplikacje z ekranów i widżetów, bez programowania",
                      "Obieg spraw, kolejki zadań, akceptacje i zastępstwa",
                      "Integracja z istniejącymi systemami na bieżąco",
