@@ -113,7 +113,7 @@ EN = {
 
     "pn_label": "For software houses and integrators",
     "pn_h2": "Software houses: your next business model.",
-    "pn_sub": "AI makes code cheap to write – and leaves organisations with silos that are hard to govern and give agents no safe place to work. With Amethis your team delivers connected, compliant systems instead: larger programmes with a smaller team. The deployment stays with you – the first model, support with analysis and design, data management and testing, moving data from the old system and training – and so do the support and the recurring revenue. On top of that, for every client you bring we pay you 15% of the platform licence in the first year and 10% of every renewal – whoever runs the installation later.",
+    "pn_sub": "AI makes code cheap to write – and leaves organisations with silos that are hard to govern and give agents no safe place to work. With Amethis your team delivers connected, compliant systems instead: larger programmes with a smaller team. The deployment stays with you – the first model, support with analysis and design, data management and testing, moving data from the old system and training – and so do the support and the recurring revenue. On top of that, for every client you bring we pay you 15% of the platform licence in the first year and 10% of every renewal.",
     "pn_c2": "Source-code escrow protects both you and your client.", "pn_c3": "Start safely: one process, a pilot, or running alongside an existing system.",
     "pn_c4": "Your own extensions and industry applications remain yours.",
     "pn_cta": "Become a partner",
@@ -339,7 +339,7 @@ PL.update({
 
     "pn_label": "Dla software house'ów i integratorów",
     "pn_h2": "Software house'y: wasz następny model biznesowy.",
-    "pn_sub": "AI sprawia, że kod jest tani w pisaniu – i zostawia organizacje z silosami, którymi trudno zarządzać i w których agenci nie mają bezpiecznego miejsca pracy. Z Amethis Twój zespół dostarcza w zamian spójne, zgodne z regulacjami systemy: większe programy mniejszym zespołem. Wdrożenie zostaje po Twojej stronie – pierwszy model, wsparcie w analizie i projektowaniu, zarządzanie danymi i testy, przeniesienie danych ze starego systemu oraz szkolenia – a razem z nim utrzymanie i przychód powtarzalny. Do tego za każdego klienta, którego przyprowadzisz, płacimy Ci 15% licencji platformy w pierwszym roku i 10% od każdego odnowienia – niezależnie od tego, kto później prowadzi instalację.",
+    "pn_sub": "AI sprawia, że kod jest tani w pisaniu – i zostawia organizacje z silosami, którymi trudno zarządzać i w których agenci nie mają bezpiecznego miejsca pracy. Z Amethis Twój zespół dostarcza w zamian spójne, zgodne z regulacjami systemy: większe programy mniejszym zespołem. Wdrożenie zostaje po Twojej stronie – pierwszy model, wsparcie w analizie i projektowaniu, zarządzanie danymi i testy, przeniesienie danych ze starego systemu oraz szkolenia – a razem z nim utrzymanie i przychód powtarzalny. Do tego za każdego klienta, którego przyprowadzisz, płacimy Ci 15% licencji platformy w pierwszym roku i 10% od każdego odnowienia.",
     "pn_c2": "Depozyt kodu źródłowego chroni was i waszego klienta.", "pn_c3": "Bezpieczny start: jeden proces, pilotaż albo praca obok istniejącego systemu.",
     "pn_c4": "Własne rozszerzenia i aplikacje branżowe pozostają wasze.",
     "pn_cta": "Zostań partnerem",
