@@ -495,6 +495,10 @@ footer .foot-links { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px 
 .contact-form .f-status { margin: 0; font-size: 0.9rem; color: var(--emerald-300); min-height: 1.2em; }
 .contact-form.sent label, .contact-form.sent .f-row, .contact-form.sent .btn, .contact-form.sent .f-note { display: none; }
 .contact-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+/* Spam-protection widget (SimplyForms / ALTCHA): the site is always dark, so pin its palette to the form's, whatever the OS scheme. */
+.contact-form sf-captcha { --altcha-color-base: rgba(11, 10, 16, .7); --altcha-color-border: var(--border); --altcha-color-border-focus: var(--violet-400);
+  --altcha-color-text: var(--text-2); --altcha-color-active: var(--violet-400); --altcha-border-radius: 10px; accent-color: var(--violet-400); }
+.contact-form.sent sf-captcha { display: none; }
 .closing .cl-mail { margin-top: 18px; font-size: 0.9rem; color: var(--text-3); }
 @media (max-width: 520px) { .contact-form .f-row { grid-template-columns: 1fr; } }
 .contact-form .f-status.err { color: var(--amber-300); }

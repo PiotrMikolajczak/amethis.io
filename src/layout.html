@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://api.simplyforms.app; base-uri 'self'; form-action https://api.simplyforms.app">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://api.simplyforms.app; worker-src 'self' blob: data:; base-uri 'self'; form-action https://api.simplyforms.app">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>{{meta_title}}</title>
   <meta name="description" content="{{meta_desc}}">
@@ -84,6 +84,19 @@
     var f = document.getElementById('contact-form');
     if (!f || f.classList.contains('open')) return;
     f.classList.add('open');
+    // Spam protection widget: loaded only when the form opens, from this site.
+    if (f.dataset.widget && !document.querySelector('script[data-sf-widget]')) {
+      var w = document.createElement('script'); w.type = 'module'; w.src = f.dataset.widget; w.setAttribute('data-sf-widget', '');
+      document.head.appendChild(w);
+      // The widget sets its own default strings (incl. the SimplyForms footer) on connect; overlay the page language on them.
+      customElements.whenDefined('sf-captcha').then(function () {
+        document.querySelectorAll('sf-captcha').forEach(function (c) {
+          var s = {}; try { s = JSON.parse(c.getAttribute('strings') || '{}'); } catch (err) { s = {}; }
+          ['label', 'verifying', 'verified', 'verificationRequired', 'waitAlert', 'error', 'expired'].forEach(function (k) { if (c.dataset[k]) s[k] = c.dataset[k]; });
+          c.setAttribute('strings', JSON.stringify(s));
+        });
+      });
+    }
     if (openBtn) { openBtn.setAttribute('aria-expanded', 'true'); openBtn.hidden = true; }
     if (focus) { var first = f.querySelector('input[name=name]'); if (first) first.focus({ preventScroll: true }); }
   };
@@ -101,6 +114,7 @@
   }
   if (form && window.fetch && window.FormData) {
     form.addEventListener('submit', function (e) {
+      if (e.defaultPrevented) return;
       e.preventDefault();
       var status = form.querySelector('.f-status'), button = form.querySelector('button');
       var done = function () { form.reset(); form.classList.add('sent'); status.textContent = form.dataset.ok; };

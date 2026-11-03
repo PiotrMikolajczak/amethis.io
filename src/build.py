@@ -17,7 +17,12 @@ LAYOUT = (ROOT / "src" / "layout.html").read_text(encoding="utf-8")
 BLOCKS = ROOT / "src" / "blocks"
 SITE = "https://amethis.io"
 # Contact form relay: SimplyForms (EU, stores nothing); plain POST returns JSON, so the page submits it with fetch().
-FORM_ENDPOINT = "https://api.simplyforms.app/v1/forms/e2O5428PwgKOOIFy9Fhn2w"
+FORM_ID = "e2O5428PwgKOOIFy9Fhn2w"
+FORM_ENDPOINT = f"https://api.simplyforms.app/v1/forms/{FORM_ID}"
+# Spam protection: SimplyForms Protection (ALTCHA proof-of-work). The widget script is served from this site
+# (dist/assets/simplyforms-widget.js, MIT, copied from https://api.simplyforms.app/sf/widget.js) and loaded only when
+# the form opens, so pages keep loading nothing from third parties; the browser contacts SimplyForms only on send.
+FORM_CHALLENGE = f"https://api.simplyforms.app/sf/challenge?form_id={FORM_ID}"
 
 EN = {
     "lang": "en", "og_locale": "en_GB", "base": "", "home": "/", "canonical": "https://amethis.io/",
@@ -132,6 +137,9 @@ EN = {
     "f_sending": "Sending…",
     "f_submit": "Book the conversation",
     "f_note": "We use your details only to reply – no newsletter, no cookies.",
+    "cap_label": "I'm not a robot", "cap_verifying": "Verifying…", "cap_verified": "Verified",
+    "cap_required": "Verification required.", "cap_wait": "Verifying – please wait.",
+    "cap_error": "Verification failed. Try again later.", "cap_expired": "Verification expired. Try again.",
     "f_msg_ph": "A few sentences are enough.",
     "f_msg": "Which process would you like to change?",
     "f_email": "Work e-mail",
@@ -358,6 +366,9 @@ PL.update({
     "f_sending": "Wysyłanie…",
     "f_submit": "Umów rozmowę",
     "f_note": "Twoje dane wykorzystamy wyłącznie do odpowiedzi – bez newslettera i bez ciasteczek.",
+    "cap_label": "Nie jestem robotem", "cap_verifying": "Weryfikacja…", "cap_verified": "Zweryfikowano",
+    "cap_required": "Wymagana weryfikacja.", "cap_wait": "Trwa weryfikacja – proszę czekać.",
+    "cap_error": "Weryfikacja nie powiodła się. Spróbuj ponownie później.", "cap_expired": "Weryfikacja wygasła. Spróbuj ponownie.",
     "f_msg_ph": "Wystarczy kilka zdań.",
     "f_msg": "Jaki proces chcesz zmienić?",
     "f_email": "E-mail służbowy",
@@ -685,11 +696,13 @@ def main() -> None:
     dist = ROOT / "dist"
     # Content hash in the stylesheet URL, so a browser never pairs new HTML with a cached old stylesheet.
     css_v = hashlib.sha256((dist / "assets" / "styles.css").read_bytes()).hexdigest()[:10]
+    widget_v = hashlib.sha256((dist / "assets" / "simplyforms-widget.js").read_bytes()).hexdigest()[:10]
     for lang, base, pages in (("en", EN, PAGE_EN), ("pl", PL, PAGE_PL)):
         prefix = "/" if lang == "en" else "/pl/"
         for page, (slug, blocks, promote) in PAGES.items():
             content = {**base, **pages[page]}
-            content.update(lp=prefix, css_v=css_v, form_action=FORM_ENDPOINT, imprint=imprint(lang), lg_op_p=imprint(lang),
+            content.update(lp=prefix, css_v=css_v, form_action=FORM_ENDPOINT, form_challenge=FORM_CHALLENGE,
+                           form_widget=f"/assets/simplyforms-widget.js?v={widget_v}", imprint=imprint(lang), lg_op_p=imprint(lang),
                            canonical=f"{SITE}{prefix}{slug}", url_en=f"{SITE}/{slug}", url_pl=f"{SITE}/pl/{slug}",
                            href_en=f"/{slug}", href_pl=f"/pl/{slug}")
             content["jsonld"] = structured_data(content, page)
