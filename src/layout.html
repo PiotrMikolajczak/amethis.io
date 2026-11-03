@@ -124,7 +124,9 @@
       fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
         .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
         .then(function (d) { if (d && d.success) { done(); } else { throw new Error('rejected'); } })
-        .catch(function () { status.classList.add('err'); status.textContent = form.dataset.err; button.disabled = false; });
+        // A spam-protection token is single-use: a 'reset' event (not form.reset(), which clears the fields) gives
+        // the widget a fresh challenge for the retry; on success done() calls form.reset(), which resets it too.
+        .catch(function () { form.dispatchEvent(new Event('reset')); status.classList.add('err'); status.textContent = form.dataset.err; button.disabled = false; });
     });
   }
   var els = document.querySelectorAll('.reveal');

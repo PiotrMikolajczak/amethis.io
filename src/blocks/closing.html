@@ -17,7 +17,7 @@
         </div>
         <label>{{f_email}}<input type="email" name="email" required autocomplete="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" title="{{f_email_err}}"></label>
         <label>{{f_msg}}<textarea name="message" rows="4" required placeholder="{{f_msg_ph}}"></textarea></label>
-        <sf-captcha challengeurl="{{form_challenge}}" auto="onsubmit" autoreset data-label="{{cap_label}}"
+        <sf-captcha challengeurl="{{form_challenge}}" auto="onsubmit" hidefooter data-label="{{cap_label}}"
                     data-verifying="{{cap_verifying}}" data-verified="{{cap_verified}}" data-verification-required="{{cap_required}}"
                     data-wait-alert="{{cap_wait}}" data-error="{{cap_error}}" data-expired="{{cap_expired}}"></sf-captcha>
         <p class="f-note">{{f_note}}</p>
